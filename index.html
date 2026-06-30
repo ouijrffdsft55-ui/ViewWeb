@@ -1,451 +1,579 @@
-// ==========================================
-// AUTO VIEW BOT - CHỈ CẦN LINK WEB
-// Tự động click xem video 3s - Không cần ID
-// Chạy trên GitHub Pages
-// Tác giả: TheAnhh
-// Phiên bản: 6.0 - Click to watch
-// ==========================================
-
-// ---------- File: index.html ----------
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto View Bot - Click Watch</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Webhook Pro</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            background: #0a0a0a;
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
+            background: #0d0d1a;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
             min-height: 100vh;
+            color: #f0f0f5;
         }
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            border: 1px solid #0f0;
-            padding: 20px;
-            border-radius: 8px;
-            background: #000;
-        }
-        h1 { text-align: center; margin-bottom: 10px; text-shadow: 0 0 10px #0f0; font-size: 22px; }
-        .sub { color: #888; text-align: center; margin-bottom: 20px; font-size: 13px; }
-        .row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .row label { min-width: 90px; color: #0f0; font-size: 14px; }
-        .row input {
-            flex: 1;
-            background: #111;
-            color: #0f0;
-            border: 1px solid #0f0;
-            padding: 10px;
-            font-family: monospace;
-            font-size: 13px;
-            min-width: 150px;
-        }
-        .row input[type="number"] { flex: 0 0 100px; }
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-        .btn-group button {
-            padding: 12px 30px;
-            font-weight: bold;
-            font-family: monospace;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .btn-start { background: #0f0; color: #000; }
-        .btn-start:hover { background: #0a0; }
-        .btn-start:disabled { opacity: 0.3; cursor: not-allowed; }
-        .btn-stop { background: #f00; color: #fff; }
-        .btn-stop:hover { background: #c00; }
-        .btn-stop:disabled { opacity: 0.3; cursor: not-allowed; }
-        .btn-clear { background: #333; color: #fff; }
-        .btn-clear:hover { background: #555; }
-        .stats {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        .stats div {
-            border: 1px solid #0f0;
-            padding: 6px 15px;
-            font-size: 14px;
-        }
-        .highlight { color: #0ff; font-weight: bold; }
-        #log {
-            height: 350px;
-            overflow-y: auto;
-            border: 1px solid #0f0;
-            padding: 10px;
-            background: #0a0a0a;
-            font-size: 12px;
-            line-height: 1.7;
-            margin-top: 10px;
-        }
-        .log-ok { color: #0f0; }
-        .log-fail { color: #f00; }
-        .log-info { color: #ff0; }
-        .log-step { color: #0ff; }
-        .log-warn { color: #f80; }
-        #iframeContainer {
-            margin-top: 15px;
-            border: 1px solid #333;
-            height: 0;
-            overflow: hidden;
-            transition: height 0.3s;
-        }
-        #iframeContainer.active { height: 400px; }
-        #iframeContainer iframe {
+        .app {
+            max-width: 900px;
             width: 100%;
-            height: 100%;
-            border: none;
-            background: #fff;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #0f0; }
-        .small { font-size: 12px; color: #666; }
-        .mode-select {
-            background: #111;
-            color: #0f0;
-            border: 1px solid #0f0;
-            padding: 10px;
-            font-family: monospace;
+        /* header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .badge {
+            background: #1e1e2f;
+            padding: 8px 18px;
+            border-radius: 30px;
             font-size: 13px;
+            color: #a8a8c8;
+            border: 1px solid #2d2d4a;
         }
+        .badge span {
+            color: #8b5cf6;
+            font-weight: 600;
+        }
+
+        /* card */
+        .card {
+            background: #151525;
+            border: 1px solid #252540;
+            border-radius: 20px;
+            padding: 25px 28px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #c8c8e8;
+        }
+        .card-title .icon {
+            font-size: 20px;
+        }
+
+        /* form */
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #a8a8c8;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: #0d0d1a;
+            border: 1px solid #2d2d4a;
+            border-radius: 12px;
+            color: #f0f0f5;
+            font-size: 14px;
+            outline: none;
+            transition: border .25s;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #6d28d9;
+        }
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 550px) {
+            .row { grid-template-columns: 1fr; }
+        }
+
+        /* advanced toggles */
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 6px 0 16px 0;
+            flex-wrap: wrap;
+        }
+        .toggle-wrap label {
+            font-size: 13px;
+            color: #a8a8c8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .toggle-wrap input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #6d28d9;
+            cursor: pointer;
+        }
+
+        /* buttons */
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2d2d4a;
+            color: #c8c8e8;
+        }
+        .btn-primary {
+            background: #6d28d9;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(109, 40, 217, 0.35);
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .btn-danger {
+            background: #b91c1c;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 12px;
+            border-radius: 8px;
+        }
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        /* status & log */
+        #status {
+            padding: 12px 18px;
+            border-radius: 12px;
+            margin-top: 16px;
+            font-weight: 500;
+            display: none;
+            font-size: 14px;
+        }
+        #status.success {
+            display: block;
+            background: #0f2a1f;
+            color: #6ee7a7;
+            border: 1px solid #1f5a3a;
+        }
+        #status.error {
+            display: block;
+            background: #2a0f0f;
+            color: #f58b8b;
+            border: 1px solid #5a1f1f;
+        }
+        #status.info {
+            display: block;
+            background: #0f1a2a;
+            color: #7bb3f5;
+            border: 1px solid #1f3a5a;
+        }
+
+        .log-box {
+            background: #0a0a14;
+            border-radius: 12px;
+            padding: 14px 18px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #8a8aaa;
+            border: 1px solid #1a1a30;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .log-box .log-success { color: #6ee7a7; }
+        .log-box .log-error { color: #f58b8b; }
+        .log-box .log-info { color: #7bb3f5; }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #4a4a6a;
+            margin-top: 30px;
+        }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>⬡ AUTO VIEW BOT v6.0</h1>
-        <div class="sub">Chỉ cần link web → tự động tạo acc → đăng nhập → click xem video 3s</div>
-
-        <div class="row">
-            <label>🌐 Link web:</label>
-            <input type="text" id="targetUrl" placeholder="https://example.com" value="https://example.com" />
-        </div>
-        <div class="row">
-            <label>📧 Email domain:</label>
-            <input type="text" id="emailDomain" value="@tempmail.com" style="flex:0 0 200px;" />
-            <label style="min-width:60px;">🔢 Số lượt:</label>
-            <input type="number" id="totalViews" value="20" min="1" max="500" style="flex:0 0 80px;" />
-            <label style="min-width:50px;">⏱️ Delay:</label>
-            <input type="number" id="delayMs" value="2000" min="500" style="flex:0 0 80px;" />
-        </div>
-        <div class="row">
-            <label style="min-width:90px;">🔑 Mật khẩu:</label>
-            <input type="text" id="password" value="Default@123" style="flex:0 0 200px;" />
-            <label style="min-width:60px;">⏳ Xem (s):</label>
-            <input type="number" id="watchSeconds" value="3" min="1" max="60" style="flex:0 0 70px;" />
-        </div>
-        <div class="row">
-            <label style="min-width:90px;">🎯 Chế độ:</label>
-            <select id="modeSelect" class="mode-select" style="flex:0 0 250px;">
-                <option value="auto">Tự động (click nút Play)</option>
-                <option value="iframe">Tải iframe (xem trang)</option>
-                <option value="reload">Reload trang liên tục</option>
-            </select>
+    <div class="app">
+        <!-- header -->
+        <div class="header">
+            <h1>📨 Webhook Pro</h1>
+            <div class="badge">📤 Đã gửi: <span id="totalSent">0</span></div>
         </div>
 
-        <div class="btn-group">
-            <button class="btn-start" id="btnStart">▶ BẮT ĐẦU</button>
-            <button class="btn-stop" id="btnStop" disabled>⏹ DỪNG</button>
-            <button class="btn-clear" id="btnClear">🗑 XÓA LOG</button>
+        <!-- main form -->
+        <div class="card">
+            <div class="card-title"><span class="icon">⚙️</span> Cấu hình gửi</div>
+
+            <div class="form-group">
+                <label>🔗 URL Webhook (nhập 1 hoặc nhiều, mỗi URL 1 dòng)</label>
+                <textarea id="webhookUrls" rows="2" placeholder="https://discord.com/api/webhooks/...&#10;https://discord.com/api/webhooks/..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>💬 Nội dung tin nhắn</label>
+                <textarea id="messageContent" placeholder="Nhập tin nhắn... hỗ trợ @mention, emoji, markdown"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>👤 Tên hiển thị (tùy chọn)</label>
+                    <input type="text" id="webhookName" placeholder="Để trống dùng tên mặc định" />
+                </div>
+                <div class="form-group">
+                    <label>🖼️ Avatar URL (tùy chọn)</label>
+                    <input type="url" id="webhookAvatar" placeholder="https://example.com/avatar.png" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>⏱️ Số lần gửi</label>
+                    <input type="number" id="sendCount" value="1" min="1" max="50" />
+                </div>
+                <div class="form-group">
+                    <label>⏳ Delay (giây) giữa các lần</label>
+                    <input type="number" id="sendDelay" value="1" min="0.5" step="0.5" />
+                </div>
+            </div>
+
+            <!-- advanced -->
+            <div class="toggle-wrap">
+                <label><input type="checkbox" id="toggleEmbed" /> 📦 Gửi dạng Embed</label>
+                <label><input type="checkbox" id="toggleFile" /> 📎 Đính kèm file (URL)</label>
+            </div>
+
+            <div id="embedOptions" class="hidden">
+                <div class="row">
+                    <div class="form-group">
+                        <label>Tiêu đề Embed</label>
+                        <input type="text" id="embedTitle" placeholder="Tiêu đề" />
+                    </div>
+                    <div class="form-group">
+                        <label>Màu sắc (hex)</label>
+                        <input type="text" id="embedColor" placeholder="#6d28d9" value="#6d28d9" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả Embed</label>
+                    <textarea id="embedDesc" rows="2" placeholder="Mô tả embed..."></textarea>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label>Footer</label>
+                        <input type="text" id="embedFooter" placeholder="Footer text" />
+                    </div>
+                    <div class="form-group">
+                        <label>URL ảnh (image)</label>
+                        <input type="url" id="embedImage" placeholder="https://example.com/image.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="fileOptions" class="hidden">
+                <div class="form-group">
+                    <label>URL file đính kèm</label>
+                    <input type="url" id="fileUrl" placeholder="https://example.com/file.png" />
+                </div>
+                <div class="form-group">
+                    <label>Tên file hiển thị</label>
+                    <input type="text" id="fileName" placeholder="ten_file.png" />
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="sendBtn">🚀 Gửi tin nhắn</button>
+                <button class="btn" id="clearLogsBtn">🧹 Xóa log</button>
+                <button class="btn btn-danger btn-sm" id="saveUrlsBtn">💾 Lưu webhook</button>
+            </div>
+
+            <div id="status"></div>
         </div>
 
-        <div class="stats">
-            <div>✅ Thành công: <span id="successCount" class="highlight">0</span></div>
-            <div>❌ Thất bại: <span id="failCount" class="highlight">0</span></div>
-            <div>📊 Đã xử lý: <span id="processedCount" class="highlight">0</span></div>
-            <div>⏱️ Trạng thái: <span id="statusText" class="highlight">Sẵn sàng</span></div>
+        <!-- log -->
+        <div class="card">
+            <div class="card-title"><span class="icon">📋</span> Nhật ký gửi</div>
+            <div class="log-box" id="logBox">▶️ Sẵn sàng... Gửi tin nhắn để xem log.</div>
         </div>
 
-        <div id="log">[SYSTEM] Nhập link web và nhấn BẮT ĐẦU.\n</div>
-
-        <div id="iframeContainer">
-            <iframe id="viewIframe" src="about:blank"></iframe>
+        <div class="footer">
+            ⚠️ Chỉ dùng cho webhook của bạn. Không spam vào server người khác.
         </div>
     </div>
 
     <script>
-        // ============================================================
-        // CORE - CHỈ CẦN LINK WEB, TỰ ĐỘNG CLICK XEM
-        // ============================================================
+        (function() {
+            // DOM refs
+            const webhookUrls = document.getElementById('webhookUrls');
+            const messageContent = document.getElementById('messageContent');
+            const webhookName = document.getElementById('webhookName');
+            const webhookAvatar = document.getElementById('webhookAvatar');
+            const sendCount = document.getElementById('sendCount');
+            const sendDelay = document.getElementById('sendDelay');
+            const sendBtn = document.getElementById('sendBtn');
+            const statusDiv = document.getElementById('status');
+            const logBox = document.getElementById('logBox');
+            const totalSentSpan = document.getElementById('totalSent');
+            const clearLogsBtn = document.getElementById('clearLogsBtn');
+            const saveUrlsBtn = document.getElementById('saveUrlsBtn');
 
-        const logEl = document.getElementById('log');
-        const successSpan = document.getElementById('successCount');
-        const failSpan = document.getElementById('failCount');
-        const processedSpan = document.getElementById('processedCount');
-        const statusSpan = document.getElementById('statusText');
+            // toggles
+            const toggleEmbed = document.getElementById('toggleEmbed');
+            const toggleFile = document.getElementById('toggleFile');
+            const embedOptions = document.getElementById('embedOptions');
+            const fileOptions = document.getElementById('fileOptions');
+            const embedTitle = document.getElementById('embedTitle');
+            const embedColor = document.getElementById('embedColor');
+            const embedDesc = document.getElementById('embedDesc');
+            const embedFooter = document.getElementById('embedFooter');
+            const embedImage = document.getElementById('embedImage');
+            const fileUrl = document.getElementById('fileUrl');
+            const fileName = document.getElementById('fileName');
 
-        const btnStart = document.getElementById('btnStart');
-        const btnStop = document.getElementById('btnStop');
-        const btnClear = document.getElementById('btnClear');
+            let totalSent = 0;
+            let isSending = false;
 
-        const targetUrl = document.getElementById('targetUrl');
-        const emailDomain = document.getElementById('emailDomain');
-        const password = document.getElementById('password');
-        const totalViews = document.getElementById('totalViews');
-        const delayMs = document.getElementById('delayMs');
-        const watchSeconds = document.getElementById('watchSeconds');
-        const modeSelect = document.getElementById('modeSelect');
-
-        const iframeContainer = document.getElementById('iframeContainer');
-        const iframe = document.getElementById('viewIframe');
-
-        let isRunning = false;
-        let shouldStop = false;
-        let successCount = 0;
-        let failCount = 0;
-        let processedCount = 0;
-        let currentCycle = 0;
-        let timeoutId = null;
-        let intervalId = null;
-
-        function log(msg, type = 'info') {
-            const time = new Date().toLocaleTimeString();
-            const entry = document.createElement('div');
-            entry.className = 'log-' + type;
-            entry.textContent = `[${time}] ${msg}`;
-            logEl.appendChild(entry);
-            logEl.scrollTop = logEl.scrollHeight;
-        }
-
-        function updateUI() {
-            successSpan.textContent = successCount;
-            failSpan.textContent = failCount;
-            processedSpan.textContent = processedCount;
-            statusSpan.textContent = isRunning ? 'ĐANG CHẠY' : 'DỪNG';
-            statusSpan.style.color = isRunning ? '#0f0' : '#f00';
-            btnStart.disabled = isRunning;
-            btnStop.disabled = !isRunning;
-            if (isRunning) {
-                iframeContainer.classList.add('active');
-            } else {
-                iframeContainer.classList.remove('active');
+            // load saved webhooks from localStorage
+            function loadSavedUrls() {
+                try {
+                    const saved = localStorage.getItem('webhookPro_urls');
+                    if (saved) {
+                        webhookUrls.value = saved;
+                    }
+                } catch (e) {}
             }
-        }
+            loadSavedUrls();
 
-        function randomString(len = 10) {
-            const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-            let r = '';
-            for (let i = 0; i < len; i++) r += chars.charAt(Math.floor(Math.random() * chars.length));
-            return r;
-        }
-
-        function randomEmail() {
-            return randomString(12) + emailDomain.value;
-        }
-
-        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-        // ---------- Tải iframe và tự động click nút Play ----------
-        async function loadAndClick(url, waitSeconds = 3) {
-            return new Promise((resolve) => {
-                const rand = '?_t=' + Date.now() + '_' + randomString(4);
-                const fullUrl = url + (url.includes('?') ? '&' : '?') + rand.substring(1);
-
-                iframe.src = fullUrl;
-
-                let resolved = false;
-                let clickDone = false;
-
-                const timer = setTimeout(() => {
-                    if (!resolved) {
-                        resolved = true;
-                        resolve(false);
-                    }
-                }, waitSeconds * 1000 + 10000);
-
-                iframe.onload = () => {
-                    if (resolved) return;
-                    
-                    // Thử click vào nút Play/Video trong iframe
-                    try {
-                        const doc = iframe.contentDocument || iframe.contentWindow?.document;
-                        if (doc) {
-                            // Tìm và click các selector thường gặp
-                            const selectors = [
-                                'video', 'button[aria-label*="play" i]', 
-                                '.play-button', '.video-play', '.player-play',
-                                '[class*="play"]', '[id*="play"]', 
-                                'button:has(svg)', '.vjs-big-play-button',
-                                '.ytp-large-play-button', '.jw-icon-playback'
-                            ];
-                            
-                            for (const sel of selectors) {
-                                const el = doc.querySelector(sel);
-                                if (el) {
-                                    el.click();
-                                    clickDone = true;
-                                    log('[CLICK] Đã click nút Play', 'ok');
-                                    break;
-                                }
-                            }
-                            
-                            // Nếu không tìm thấy nút, thử click vào chính video
-                            if (!clickDone) {
-                                const video = doc.querySelector('video');
-                                if (video) {
-                                    video.click();
-                                    video.play();
-                                    clickDone = true;
-                                    log('[CLICK] Đã click vào video', 'ok');
-                                }
-                            }
-                        }
-                    } catch(e) {
-                        // CORS error - không thể truy cập iframe DOM
-                        log('[WARN] Không thể click do CORS, nhưng view vẫn được tính', 'warn');
-                    }
-
-                    if (!resolved) {
-                        resolved = true;
-                        clearTimeout(timer);
-                        resolve(true);
-                    }
-                };
-
-                iframe.onerror = () => {
-                    if (!resolved) {
-                        resolved = true;
-                        clearTimeout(timer);
-                        resolve(false);
-                    }
-                };
+            // save
+            saveUrlsBtn.addEventListener('click', function() {
+                const urls = webhookUrls.value.trim();
+                if (!urls) {
+                    showStatus('⚠️ Vui lòng nhập ít nhất 1 URL webhook để lưu.', 'error');
+                    return;
+                }
+                try {
+                    localStorage.setItem('webhookPro_urls', urls);
+                    showStatus('✅ Đã lưu danh sách webhook vào bộ nhớ.', 'success');
+                } catch (e) {
+                    showStatus('❌ Lỗi lưu: ' + e.message, 'error');
+                }
             });
-        }
 
-        // ---------- Chạy 1 cycle ----------
-        async function runCycle(cycleIndex) {
-            const baseUrl = targetUrl.value.trim();
-            const pass = password.value;
-            const watchSec = parseInt(watchSeconds.value) || 3;
-            const mode = modeSelect.value;
+            // clear logs
+            clearLogsBtn.addEventListener('click', function() {
+                logBox.innerHTML = '🧹 Đã xóa log.';
+                statusDiv.className = '';
+                statusDiv.style.display = 'none';
+            });
 
-            if (!baseUrl) {
-                log('[ERROR] Chưa nhập link web!', 'fail');
-                return false;
+            // toggle embed
+            toggleEmbed.addEventListener('change', function() {
+                embedOptions.classList.toggle('hidden', !this.checked);
+            });
+            toggleFile.addEventListener('change', function() {
+                fileOptions.classList.toggle('hidden', !this.checked);
+            });
+
+            // show status
+            function showStatus(msg, type) {
+                statusDiv.textContent = msg;
+                statusDiv.className = type;
+                statusDiv.style.display = 'block';
             }
 
-            const email = randomEmail();
-            log(`[CYCLE ${cycleIndex}] 📧 ${email}`, 'step');
-
-            // --- ĐĂNG KÝ ---
-            log(`[CYCLE ${cycleIndex}] 📝 Đăng ký...`, 'info');
-            await loadAndClick(baseUrl + '/register', 3);
-            await sleep(1000);
-
-            // --- ĐĂNG NHẬP ---
-            log(`[CYCLE ${cycleIndex}] 🔑 Đăng nhập...`, 'info');
-            await loadAndClick(baseUrl + '/login', 3);
-            await sleep(1000);
-
-            // --- XEM VIDEO (tải trang chính) ---
-            log(`[CYCLE ${cycleIndex}] 👁️ Xem video ${watchSec}s...`, 'info');
-            
-            if (mode === 'auto') {
-                // Tự động click play
-                await loadAndClick(baseUrl, watchSec);
-            } else if (mode === 'iframe') {
-                // Chỉ tải iframe
-                await loadAndClick(baseUrl, watchSec);
-            } else {
-                // Reload liên tục
-                const endTime = Date.now() + watchSec * 1000;
-                let count = 0;
-                while (Date.now() < endTime && !shouldStop) {
-                    const rand = '?_t=' + Date.now() + '_' + randomString(4);
-                    iframe.src = baseUrl + (baseUrl.includes('?') ? '&' : '?') + rand.substring(1);
-                    count++;
-                    await sleep(500);
-                }
-                log(`[CYCLE ${cycleIndex}] Đã reload ${count} lần`, 'info');
+            function addLog(msg, type) {
+                const colors = {
+                    success: 'log-success',
+                    error: 'log-error',
+                    info: 'log-info'
+                };
+                const cls = colors[type] || 'log-info';
+                const time = new Date().toLocaleTimeString();
+                logBox.innerHTML += `<div class="${cls}">[${time}] ${msg}</div>`;
+                logBox.scrollTop = logBox.scrollHeight;
             }
 
-            await sleep(watchSec * 1000);
-
-            // --- ĐĂNG XUẤT ---
-            log(`[CYCLE ${cycleIndex}] 🚪 Logout...`, 'info');
-            await loadAndClick(baseUrl + '/logout', 2);
-            await sleep(500);
-
-            successCount++;
-            processedCount++;
-            updateUI();
-            log(`[CYCLE ${cycleIndex}] ✅ HOÀN THÀNH (${successCount})`, 'ok');
-            return true;
-        }
-
-        // ---------- MAIN ----------
-        async function mainLoop() {
-            if (isRunning) return;
-
-            const total = parseInt(totalViews.value) || 20;
-            const delay = parseInt(delayMs.value) || 2000;
-
-            isRunning = true;
-            shouldStop = false;
-            successCount = 0;
-            failCount = 0;
-            processedCount = 0;
-            currentCycle = 0;
-            updateUI();
-
-            log(`[SYSTEM] 🚀 BẮT ĐẦU - ${total} lượt, xem ${watchSeconds.value}s`, 'info');
-            log(`[SYSTEM] 🎯 ${targetUrl.value}`, 'step');
-
-            for (let i = 1; i <= total; i++) {
-                if (shouldStop) {
-                    log('[SYSTEM] ⏹ Dừng theo yêu cầu', 'info');
-                    break;
+            // main send
+            sendBtn.addEventListener('click', async function() {
+                if (isSending) {
+                    showStatus('⏳ Đang gửi, vui lòng đợi...', 'info');
+                    return;
                 }
-                currentCycle = i;
-                await runCycle(i);
 
-                if (i < total && !shouldStop) {
-                    log(`[SYSTEM] ⏳ Chờ ${delay}ms...`, 'info');
-                    await sleep(delay);
+                const urlsRaw = webhookUrls.value.trim();
+                if (!urlsRaw) {
+                    showStatus('⚠️ Vui lòng nhập ít nhất 1 URL webhook.', 'error');
+                    return;
                 }
-            }
+                const urls = urlsRaw.split('\n').map(u => u.trim()).filter(u => u !== '');
+                if (urls.length === 0) {
+                    showStatus('⚠️ Không có URL hợp lệ.', 'error');
+                    return;
+                }
 
-            isRunning = false;
-            updateUI();
-            log(`[SYSTEM] ✅ KẾT THÚC - OK: ${successCount}, FAIL: ${failCount}`, 'info');
-        }
+                const content = messageContent.value.trim();
+                if (!content && !toggleEmbed.checked) {
+                    showStatus('⚠️ Vui lòng nhập nội dung tin nhắn hoặc bật Embed.', 'error');
+                    return;
+                }
 
-        function stopBot() {
-            shouldStop = true;
-            if (timeoutId) { clearTimeout(timeoutId); timeoutId = null; }
-            if (intervalId) { clearInterval(intervalId); intervalId = null; }
-            log('[SYSTEM] ⏹ Đang dừng...', 'info');
-        }
+                const count = parseInt(sendCount.value) || 1;
+                const delay = parseFloat(sendDelay.value) || 1;
+                if (count < 1 || count > 100) {
+                    showStatus('⚠️ Số lần gửi phải từ 1-100.', 'error');
+                    return;
+                }
 
-        btnStart.addEventListener('click', mainLoop);
-        btnStop.addEventListener('click', stopBot);
-        btnClear.addEventListener('click', () => { logEl.innerHTML = '[SYSTEM] Đã xóa log.\n'; });
+                // build payload
+                let payload = {};
+                if (toggleEmbed.checked) {
+                    const embed = {
+                        title: embedTitle.value || undefined,
+                        description: embedDesc.value || undefined,
+                        color: parseInt(embedColor.value.replace('#', ''), 16) || undefined,
+                        footer: embedFooter.value ? { text: embedFooter.value } : undefined,
+                        image: embedImage.value ? { url: embedImage.value } : undefined,
+                    };
+                    // clean undefined
+                    for (let k in embed) if (embed[k] === undefined) delete embed[k];
+                    if (Object.keys(embed).length > 0) {
+                        payload.embeds = [embed];
+                    } else {
+                        showStatus('⚠️ Embed trống, hãy nhập ít nhất 1 trường.', 'error');
+                        return;
+                    }
+                } else {
+                    payload.content = content;
+                }
 
-        targetUrl.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !isRunning) mainLoop();
-        });
+                // name & avatar
+                if (webhookName.value.trim()) payload.username = webhookName.value.trim();
+                if (webhookAvatar.value.trim()) payload.avatar_url = webhookAvatar.value.trim();
 
-        updateUI();
-        log('[SYSTEM] ✅ Sẵn sàng. Chỉ cần nhập link web và nhấn START.', 'ok');
-        log('[SYSTEM] ⚠️ Web phải có các route: /register, /login, /logout', 'warn');
-        log('[SYSTEM] ⚠️ Chế độ Auto sẽ tự click nút Play trên video', 'info');
+                // file attachment (chỉ hỗ trợ 1 file qua URL, cần dùng multipart nhưng để đơn giản gửi embed image thay thế)
+                // Discord webhook file đính kèm yêu cầu multipart/form-data, phức tạp. Tạm thời bỏ qua.
+
+                isSending = true;
+                sendBtn.disabled = true;
+                sendBtn.textContent = '⏳ Đang gửi...';
+                showStatus(`⏳ Đang gửi ${count} lần đến ${urls.length} webhook...`, 'info');
+
+                let successCount = 0;
+                let errorCount = 0;
+                let logMessages = [];
+
+                for (let i = 0; i < count; i++) {
+                    for (const url of urls) {
+                        try {
+                            const response = await fetch(url, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                            if (response.ok) {
+                                successCount++;
+                                totalSent++;
+                                logMessages.push(`✅ Thành công → ${url.substring(0, 50)}...`);
+                            } else {
+                                let errMsg = `HTTP ${response.status}`;
+                                try {
+                                    const errJson = await response.json();
+                                    if (errJson.message) errMsg += ` - ${errJson.message}`;
+                                } catch (e) {}
+                                errorCount++;
+                                logMessages.push(`❌ Lỗi → ${url.substring(0, 50)}... | ${errMsg}`);
+                            }
+                        } catch (err) {
+                            errorCount++;
+                            logMessages.push(`❌ Lỗi kết nối → ${url.substring(0, 50)}... | ${err.message}`);
+                        }
+                    }
+                    // update status mỗi lần
+                    const progress = `⏳ Lần ${i+1}/${count} | ✅ ${successCount} | ❌ ${errorCount}`;
+                    showStatus(progress, 'info');
+
+                    // delay except last
+                    if (i < count - 1 && delay > 0) {
+                        await new Promise(resolve => setTimeout(resolve, delay * 1000));
+                    }
+                }
+
+                // final status
+                const finalMsg = `✅ Thành công: ${successCount} | ❌ Thất bại: ${errorCount}`;
+                if (errorCount === 0) {
+                    showStatus(`🎉 Gửi thành công! ${finalMsg}`, 'success');
+                } else if (successCount === 0) {
+                    showStatus(`❌ Gửi thất bại hoàn toàn. ${finalMsg}`, 'error');
+                } else {
+                    showStatus(`⚠️ Gửi có lỗi. ${finalMsg}`, 'error');
+                }
+
+                // log
+                logMessages.forEach(msg => {
+                    const type = msg.includes('✅') ? 'success' : 'error';
+                    addLog(msg, type);
+                });
+                addLog(`📊 Tổng kết: ${finalMsg}`, 'info');
+                totalSentSpan.textContent = totalSent;
+
+                isSending = false;
+                sendBtn.disabled = false;
+                sendBtn.textContent = '🚀 Gửi tin nhắn';
+            });
+
+        })();
     </script>
 </body>
 </html>

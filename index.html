@@ -14,12 +14,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
@@ -34,7 +32,6 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         .card {
             max-width: 1100px;
             width: 100%;
@@ -49,7 +46,6 @@
             position: relative;
             will-change: transform;
         }
-
         .settings-btn {
             position: absolute;
             top: 1.5rem;
@@ -71,21 +67,18 @@
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
-
         .settings-btn:hover {
             background: #1d3b4f;
             color: white;
             transform: rotate(90deg) scale(1.05);
             border-color: #1d3b4f;
         }
-
         .profile-grid {
             display: grid;
             grid-template-columns: 1fr 2.2fr;
             gap: 2.5rem;
             align-items: start;
         }
-
         .sidebar {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
@@ -98,13 +91,11 @@
             position: sticky;
             top: 2rem;
         }
-
         .avatar-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 1.2rem;
         }
-
         .avatar {
             width: 150px;
             height: 150px;
@@ -116,7 +107,6 @@
             display: block;
             will-change: transform;
         }
-
         .avatar-edit-hint {
             position: absolute;
             bottom: 4px;
@@ -135,12 +125,10 @@
             transition: 0.2s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
-
         .avatar-edit-hint:hover {
             transform: scale(1.1);
             background: #0f2a3b;
         }
-
         .sidebar h2 {
             font-size: 1.9rem;
             font-weight: 700;
@@ -148,7 +136,6 @@
             color: #0b1a26;
             margin-bottom: 0.2rem;
         }
-
         .sidebar .tagline {
             font-weight: 400;
             color: #2c4a5e;
@@ -161,7 +148,6 @@
             margin-bottom: 0.8rem;
             border: 1px solid rgba(60, 110, 140, 0.1);
         }
-
         .short-bio {
             font-size: 0.95rem;
             color: #1f3849;
@@ -171,19 +157,16 @@
             padding: 0 0.2rem;
             text-align: left;
         }
-
         .short-bio strong {
             font-weight: 600;
             color: #0b1a26;
         }
-
         .info-list {
             list-style: none;
             text-align: left;
             margin: 1rem 0 1.5rem;
             padding: 0;
         }
-
         .info-list li {
             display: flex;
             align-items: center;
@@ -193,14 +176,12 @@
             font-size: 0.9rem;
             color: #1d3342;
         }
-
         .info-list li i {
             width: 1.8rem;
             font-size: 1.1rem;
             color: #2d6b8f;
             text-align: center;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
@@ -208,7 +189,6 @@
             flex-wrap: wrap;
             margin: 1.2rem 0 0.5rem;
         }
-
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -226,25 +206,21 @@
             will-change: transform;
             flex-shrink: 0;
         }
-
         .social-links a:hover {
             transform: scale(1.1) translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
-
         .social-links a.zalo:hover { background: #0183d1; color: white; border-color: #0183d1; }
         .social-links a.discord:hover { background: #5865F2; color: white; border-color: #5865F2; }
         .social-links a.youtube:hover { background: #FF0000; color: white; border-color: #FF0000; }
         .social-links a.telegram:hover { background: #0088cc; color: white; border-color: #0088cc; }
         .social-links a.facebook:hover { background: #1877F2; color: white; border-color: #1877F2; }
         .social-links a.tiktok:hover { background: #000000; color: #00f2ea; border-color: #000000; }
-
         .main-content {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
-
         .section-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -257,12 +233,10 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.03);
             padding-bottom: 0.5rem;
         }
-
         .section-title i {
             color: #2d6b8f;
             font-size: 1.3rem;
         }
-
         .cta-button {
             margin-top: 0.5rem;
             display: inline-block;
@@ -281,24 +255,20 @@
             will-change: transform;
             -webkit-tap-highlight-color: transparent;
         }
-
         .cta-button i {
             margin-right: 0.5rem;
         }
-
         .cta-button:hover {
             background: #0f2a3b;
             transform: scale(1.02);
             box-shadow: 0 12px 20px rgba(20, 50, 70, 0.25);
         }
-
         .cta-button.logout-btn {
             background: #8f4a4a;
         }
         .cta-button.logout-btn:hover {
             background: #6d3636;
         }
-
         .footer-note {
             margin-top: 1.8rem;
             text-align: center;
@@ -308,7 +278,6 @@
             padding-top: 1.2rem;
             letter-spacing: 0.2px;
         }
-
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -325,11 +294,9 @@
             padding: 1.5rem;
             will-change: opacity;
         }
-
         .modal-overlay.active {
             display: flex;
         }
-
         .modal-box {
             background: white;
             border-radius: 2.5rem;
@@ -344,7 +311,6 @@
             display: flex;
             flex-direction: column;
         }
-
         .modal-scrollable {
             flex: 1;
             overflow-y: auto;
@@ -353,36 +319,24 @@
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: touch;
         }
-
         .modal-scrollable::-webkit-scrollbar {
             width: 5px;
         }
-
         .modal-scrollable::-webkit-scrollbar-track {
             background: #f0f4f8;
             border-radius: 10px;
         }
-
         .modal-scrollable::-webkit-scrollbar-thumb {
             background: #b0c8d8;
             border-radius: 10px;
         }
-
         .modal-scrollable::-webkit-scrollbar-thumb:hover {
             background: #8aacbf;
         }
-
         @keyframes modalFade {
-            from {
-                opacity: 0;
-                transform: translateY(25px) scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            from { opacity: 0; transform: translateY(25px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
-
         .modal-close {
             position: sticky;
             top: 0;
@@ -398,12 +352,10 @@
             z-index: 5;
             margin-bottom: 0.5rem;
         }
-
         .modal-close:hover {
             color: #1d3b4f;
             transform: rotate(90deg);
         }
-
         .modal-box h3 {
             font-size: 1.7rem;
             font-weight: 600;
@@ -412,7 +364,6 @@
             margin-bottom: 0.3rem;
             clear: both;
         }
-
         .modal-box .sub {
             text-align: center;
             color: #496c82;
@@ -420,11 +371,9 @@
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
-
         .form-group {
             margin-bottom: 1.2rem;
         }
-
         .form-group label {
             display: block;
             font-size: 0.85rem;
@@ -432,12 +381,10 @@
             color: #1d3b4f;
             margin-bottom: 0.3rem;
         }
-
         .form-group label i {
             margin-right: 0.4rem;
             color: #2d6b8f;
         }
-
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -451,13 +398,11 @@
             -webkit-appearance: none;
             appearance: none;
         }
-
         .form-group textarea {
             border-radius: 20px;
             resize: vertical;
             min-height: 80px;
         }
-
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
@@ -465,13 +410,11 @@
             box-shadow: 0 0 0 3px rgba(45, 107, 143, 0.1);
             background: white;
         }
-
         .form-group .social-input-row {
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
-
         .form-group .social-input-row .social-icon-label {
             width: 36px;
             height: 36px;
@@ -485,13 +428,11 @@
             flex-shrink: 0;
             border: 1px solid #dbe4eb;
         }
-
         .form-group .social-input-row input {
             flex: 1;
             padding: 0.6rem 0.9rem;
             font-size: 0.85rem;
         }
-
         .profile-link-display {
             background: #f0f7fc;
             border: 1px solid #dbe4eb;
@@ -502,12 +443,10 @@
             gap: 0.8rem;
             flex-wrap: wrap;
         }
-
         .profile-link-display .link-icon {
             color: #2d6b8f;
             font-size: 1rem;
         }
-
         .profile-link-display .link-url {
             flex: 1;
             color: #1d3b4f;
@@ -519,7 +458,6 @@
             font-family: inherit;
             padding: 0.2rem 0;
         }
-
         .profile-link-display .copy-btn {
             background: #1d3b4f;
             color: white;
@@ -532,12 +470,10 @@
             transition: 0.2s;
             white-space: nowrap;
         }
-
         .profile-link-display .copy-btn:hover {
             background: #0f2a3b;
             transform: scale(1.02);
         }
-
         .profile-link-display .open-btn {
             background: #2d6b8f;
             color: white;
@@ -554,12 +490,10 @@
             align-items: center;
             gap: 0.3rem;
         }
-
         .profile-link-display .open-btn:hover {
             background: #1d4a66;
             transform: scale(1.02);
         }
-
         .form-actions {
             display: flex;
             flex-direction: column;
@@ -567,7 +501,6 @@
             margin-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
-
         .form-actions button {
             padding: 0.8rem;
             border-radius: 60px;
@@ -579,34 +512,28 @@
             font-family: inherit;
             will-change: transform;
         }
-
         .btn-primary {
             background: #1d3b4f;
             color: white;
         }
-
         .btn-primary:hover {
             background: #0f2a3b;
             transform: scale(1.01);
         }
-
         .btn-secondary {
             background: transparent;
             color: #2d6b8f;
             border: 1px solid #dbe4eb !important;
         }
-
         .btn-secondary:hover {
             background: #f0f5f9;
         }
-
         .avatar-upload-row {
             display: flex;
             align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .avatar-upload-row .avatar-preview {
             width: 60px;
             height: 60px;
@@ -616,7 +543,6 @@
             background: #cbdbe8;
             flex-shrink: 0;
         }
-
         .avatar-upload-row input[type="file"] {
             flex: 1;
             padding: 0.5rem;
@@ -627,7 +553,6 @@
             cursor: pointer;
             min-width: 0;
         }
-
         .avatar-upload-row input[type="file"]::file-selector-button {
             padding: 0.3rem 1rem;
             border-radius: 40px;
@@ -638,18 +563,15 @@
             font-family: inherit;
             transition: 0.2s;
         }
-
         .avatar-upload-row input[type="file"]::file-selector-button:hover {
             background: #0f2a3b;
         }
-
         .auth-status {
             display: flex;
             align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .auth-status .user-info {
             font-weight: 400;
             color: #1d3342;
@@ -658,41 +580,30 @@
             border-radius: 40px;
             font-size: 0.9rem;
         }
-
         .auth-status .user-info i {
             margin-right: 0.4rem;
             color: #2d6b8f;
         }
-
-        .owner-only {
-            display: block;
-        }
-
         .view-mode .settings-btn,
         .view-mode .avatar-edit-hint,
         .view-mode .main-content {
             display: none !important;
         }
-
         .view-mode .card {
             padding-top: 1.5rem;
         }
-
         @media (max-width: 850px) {
             .profile-grid {
                 grid-template-columns: 1fr;
                 gap: 1.8rem;
             }
-
             .card {
                 padding: 1.8rem;
             }
-
             .sidebar {
                 padding: 1.8rem 1.2rem;
                 position: static;
             }
-
             .settings-btn {
                 top: 1rem;
                 right: 1.2rem;
@@ -700,72 +611,58 @@
                 height: 38px;
                 font-size: 1rem;
             }
-
             .modal-box {
                 max-height: 95vh;
                 padding: 1.8rem 1.2rem 1rem;
             }
         }
-
         @media (max-width: 480px) {
             .card {
                 padding: 1.2rem;
                 border-radius: 2rem;
             }
-
             .sidebar h2 {
                 font-size: 1.6rem;
             }
-
             .social-links {
                 gap: 0.5rem;
             }
-
             .social-links a {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
             }
-
             .cta-button {
                 width: 100%;
                 text-align: center;
             }
-
             .auth-status {
                 flex-direction: column;
                 align-items: stretch;
             }
-
             .modal-box {
                 padding: 1.5rem 1rem 1rem;
                 border-radius: 1.8rem;
                 max-height: 98vh;
             }
-
             .avatar-upload-row {
                 flex-direction: column;
                 align-items: stretch;
             }
-
             .avatar-upload-row .avatar-preview {
                 align-self: center;
             }
-
             .form-group .social-input-row {
                 flex-wrap: wrap;
             }
-
             .profile-link-display {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0.5rem;
             }
-
             .profile-link-display .link-url {
                 text-align: center;
             }
-
             .profile-link-display .copy-btn,
             .profile-link-display .open-btn {
                 width: 100%;
@@ -773,27 +670,16 @@
                 justify-content: center;
             }
         }
-
         @media (hover: none) {
-            .cta-button:hover {
-                transform: none;
-            }
-            .social-links a:hover {
-                transform: none;
-                background: white;
-                color: #1d3b4f;
-            }
-            .settings-btn:hover {
-                transform: none;
-                background: rgba(255, 255, 255, 0.6);
-                color: #1d3b4f;
-            }
+            .cta-button:hover { transform: none; }
+            .social-links a:hover { transform: none; background: white; color: #1d3b4f; }
+            .settings-btn:hover { transform: none; background: rgba(255, 255, 255, 0.6); color: #1d3b4f; }
         }
     </style>
 </head>
 <body>
     <div class="card" id="mainCard">
-        <button class="settings-btn owner-only" id="settingsBtn" aria-label="Cài đặt">
+        <button class="settings-btn" id="settingsBtn" aria-label="Cài đặt">
             <i class="fas fa-cog"></i>
         </button>
 
@@ -801,7 +687,7 @@
             <aside class="sidebar">
                 <div class="avatar-wrapper">
                     <img class="avatar" id="profileAvatar" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Avatar">
-                    <div class="avatar-edit-hint owner-only" id="avatarEditHint" title="Đổi ảnh đại diện">
+                    <div class="avatar-edit-hint" id="avatarEditHint" title="Đổi ảnh đại diện">
                         <i class="fas fa-camera"></i>
                     </div>
                 </div>
@@ -829,7 +715,7 @@
                 </div>
             </aside>
 
-            <main class="main-content owner-only" id="adminPanel">
+            <main class="main-content" id="adminPanel">
                 <section>
                     <div class="section-title">
                         <i class="fas fa-lock"></i> Tài khoản
@@ -1019,22 +905,16 @@
 
             const mainCard = document.getElementById('mainCard');
 
-            if (isViewMode) {
-                mainCard.classList.add('view-mode');
-                document.querySelector('.footer-note').innerHTML = `
-                    <i class="fas fa-crown" style="opacity: 0.3; margin-right: 6px;"></i>
-                    Trang cá nhân của Nguyễn Đức Anh · © 2026
-                `;
-                loadProfileOnly();
-                loadSocialLinksOnly();
-                return;
-            }
-
-            let currentMode = 'login';
-            const USERS_KEY = 'mywebsite_users';
-            const SESSION_KEY = 'mywebsite_session';
-            const PROFILE_KEY = 'mywebsite_profile';
-            const SOCIAL_KEY = 'mywebsite_social';
+            const defaultProfile = {
+                avatar: 'https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5',
+                name: 'Nguyễn Đức Anh',
+                tagline: 'Developer',
+                bio: '<strong>Xin chào!</strong> Tôi là Nguyễn Đức Anh, một nhà phát triển web đam mê công nghệ và sáng tạo. Tôi thích xây dựng những sản phẩm trực quan, tối ưu trải nghiệm người dùng và luôn học hỏi những xu hướng mới.',
+                location: 'Hà Nam, Việt Nam',
+                experience: '5+ năm kinh nghiệm',
+                email: 'ducanhnen@gmail.com',
+                phone: '0325976017'
+            };
 
             const profileAvatar = document.getElementById('profileAvatar');
             const profileName = document.getElementById('profileName');
@@ -1045,6 +925,61 @@
             const infoEmail = document.getElementById('infoEmail');
             const infoPhone = document.getElementById('infoPhone');
             const socialLinks = document.getElementById('socialLinks');
+
+            function getProfile() {
+                try {
+                    return JSON.parse(localStorage.getItem('mywebsite_profile')) || null;
+                } catch { return null; }
+            }
+
+            function getSocialLinks() {
+                try {
+                    return JSON.parse(localStorage.getItem('mywebsite_social')) || {};
+                } catch { return {}; }
+            }
+
+            function loadProfileData() {
+                const profile = getProfile();
+                const data = profile || defaultProfile;
+                if (data.avatar) profileAvatar.src = data.avatar;
+                if (data.name) profileName.textContent = data.name;
+                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.bio) shortBio.innerHTML = data.bio;
+                if (data.location) infoLocation.textContent = data.location;
+                if (data.experience) infoExperience.textContent = data.experience;
+                if (data.email) infoEmail.textContent = data.email;
+                if (data.phone) infoPhone.textContent = data.phone;
+            }
+
+            function loadSocialData() {
+                const links = getSocialLinks();
+                const anchors = socialLinks.querySelectorAll('a');
+                anchors.forEach(a => {
+                    const platform = a.dataset.platform;
+                    if (links[platform]) {
+                        a.href = links[platform];
+                    } else {
+                        a.href = '#';
+                    }
+                });
+            }
+
+            if (isViewMode) {
+                mainCard.classList.add('view-mode');
+                document.querySelector('.footer-note').innerHTML = `
+                    <i class="fas fa-crown" style="opacity: 0.3; margin-right: 6px;"></i>
+                    Trang cá nhân của Nguyễn Đức Anh · © 2026
+                `;
+                loadProfileData();
+                loadSocialData();
+                return;
+            }
+
+            let currentMode = 'login';
+            const USERS_KEY = 'mywebsite_users';
+            const SESSION_KEY = 'mywebsite_session';
+            const PROFILE_KEY = 'mywebsite_profile';
+            const SOCIAL_KEY = 'mywebsite_social';
 
             const settingsModal = document.getElementById('settingsModal');
             const settingsModalClose = document.getElementById('settingsModalClose');
@@ -1138,12 +1073,6 @@
                 document.body.removeChild(textarea);
             }
 
-            function getSocialLinks() {
-                try {
-                    return JSON.parse(localStorage.getItem(SOCIAL_KEY)) || {};
-                } catch { return {}; }
-            }
-
             function saveSocialLinks(data) {
                 localStorage.setItem(SOCIAL_KEY, JSON.stringify(data));
             }
@@ -1179,37 +1108,30 @@
                 });
             }
 
-            function getProfile() {
-                try {
-                    return JSON.parse(localStorage.getItem(PROFILE_KEY)) || null;
-                } catch { return null; }
-            }
-
             function saveProfile(data) {
                 localStorage.setItem(PROFILE_KEY, JSON.stringify(data));
             }
 
             function loadProfile() {
                 const profile = getProfile();
-                if (profile) {
-                    if (profile.avatar) profileAvatar.src = profile.avatar;
-                    if (profile.name) profileName.textContent = profile.name;
-                    if (profile.tagline) profileTagline.innerHTML =
-                        `<i class="fas fa-code" style="margin-right: 6px;"></i> ${profile.tagline}`;
-                    if (profile.bio) shortBio.innerHTML = profile.bio;
-                    if (profile.location) infoLocation.textContent = profile.location;
-                    if (profile.experience) infoExperience.textContent = profile.experience;
-                    if (profile.email) infoEmail.textContent = profile.email;
-                    if (profile.phone) infoPhone.textContent = profile.phone;
-                }
-                settingsName.value = profile?.name || '';
-                settingsTagline.value = profile?.tagline || '';
-                settingsBio.value = profile?.bio || '';
-                settingsLocation.value = profile?.location || '';
-                settingsExperience.value = profile?.experience || '';
-                settingsEmail.value = profile?.email || '';
-                settingsPhone.value = profile?.phone || '';
-                settingsAvatarPreview.src = profile?.avatar || profileAvatar.src;
+                const data = profile || defaultProfile;
+                if (data.avatar) profileAvatar.src = data.avatar;
+                if (data.name) profileName.textContent = data.name;
+                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.bio) shortBio.innerHTML = data.bio;
+                if (data.location) infoLocation.textContent = data.location;
+                if (data.experience) infoExperience.textContent = data.experience;
+                if (data.email) infoEmail.textContent = data.email;
+                if (data.phone) infoPhone.textContent = data.phone;
+
+                settingsName.value = data.name || '';
+                settingsTagline.value = data.tagline || '';
+                settingsBio.value = data.bio || '';
+                settingsLocation.value = data.location || '';
+                settingsExperience.value = data.experience || '';
+                settingsEmail.value = data.email || '';
+                settingsPhone.value = data.phone || '';
+                settingsAvatarPreview.src = data.avatar || profileAvatar.src;
             }
 
             function applySettings(data) {
@@ -1218,8 +1140,7 @@
                     settingsAvatarPreview.src = data.avatar;
                 }
                 if (data.name) profileName.textContent = data.name;
-                if (data.tagline) profileTagline.innerHTML =
-                    `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
                 if (data.bio) shortBio.innerHTML = data.bio;
                 if (data.location) infoLocation.textContent = data.location;
                 if (data.experience) infoExperience.textContent = data.experience;
@@ -1274,11 +1195,11 @@
                     avatar: settingsAvatarPreview.src,
                     name: settingsName.value.trim() || profileName.textContent,
                     tagline: settingsTagline.value.trim() || 'Developer',
-                    bio: settingsBio.value.trim() || 'Xin chào! Tôi là một nhà phát triển web...',
-                    location: settingsLocation.value.trim() || 'Hà Nam, Việt Nam',
-                    experience: settingsExperience.value.trim() || '5+ năm kinh nghiệm',
-                    email: settingsEmail.value.trim() || 'ducanhnen@gmail.com',
-                    phone: settingsPhone.value.trim() || '0325976017'
+                    bio: settingsBio.value.trim() || shortBio.innerHTML,
+                    location: settingsLocation.value.trim() || infoLocation.textContent,
+                    experience: settingsExperience.value.trim() || infoExperience.textContent,
+                    email: settingsEmail.value.trim() || infoEmail.textContent,
+                    phone: settingsPhone.value.trim() || infoPhone.textContent
                 };
                 saveProfile(profile);
                 applySettings(profile);
@@ -1447,34 +1368,6 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
             });
-
-            function loadProfileOnly() {
-                const profile = getProfile();
-                if (profile) {
-                    if (profile.avatar) profileAvatar.src = profile.avatar;
-                    if (profile.name) profileName.textContent = profile.name;
-                    if (profile.tagline) profileTagline.innerHTML =
-                        `<i class="fas fa-code" style="margin-right: 6px;"></i> ${profile.tagline}`;
-                    if (profile.bio) shortBio.innerHTML = profile.bio;
-                    if (profile.location) infoLocation.textContent = profile.location;
-                    if (profile.experience) infoExperience.textContent = profile.experience;
-                    if (profile.email) infoEmail.textContent = profile.email;
-                    if (profile.phone) infoPhone.textContent = profile.phone;
-                }
-            }
-
-            function loadSocialLinksOnly() {
-                const links = getSocialLinks();
-                const anchors = socialLinks.querySelectorAll('a');
-                anchors.forEach(a => {
-                    const platform = a.dataset.platform;
-                    if (links[platform]) {
-                        a.href = links[platform];
-                    } else {
-                        a.href = '#';
-                    }
-                });
-            }
 
             loadProfile();
             loadSocialLinks();

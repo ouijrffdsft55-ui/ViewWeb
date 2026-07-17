@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyễn Đức Anh | Developer</title>
     
-    <!-- ===== OPEN GRAPH - QUAN TRỌNG CHO CHIA SẺ ===== -->
     <meta property="og:title" content="Nguyễn Đức Anh | Developer" />
-    <meta property="og:description" content="Developer với 5+ năm kinh nghiệm. Chuyên phát triển web, UI/UX và giải pháp công nghệ." />
+    <meta property="og:description" content="Developer Uy Tín - Chuyên thiết kế web, UI/UX và giải pháp công nghệ" />
     <meta property="og:image" content="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=500&background=2d6b8f&color=fff&bold=true&font-size=0.5" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
@@ -15,10 +14,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Nguyễn Đức Anh" />
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nguyễn Đức Anh | Developer" />
-    <meta name="twitter:description" content="Developer với 5+ năm kinh nghiệm." />
+    <meta name="twitter:description" content="Developer Uy Tín" />
     <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=500&background=2d6b8f&color=fff&bold=true&font-size=0.5" />
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
@@ -336,6 +334,30 @@
             border: 1px solid #dbe4eb;
         }
         .form-group .social-input-row input { flex: 1; padding: 0.6rem 0.9rem; font-size: 0.85rem; }
+        
+        /* My Pages Button */
+        .my-pages-btn {
+            background: #1d3b4f;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: inherit;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .my-pages-btn:hover {
+            background: #0f2a3b;
+            transform: scale(1.02);
+        }
+        .my-pages-btn i { font-size: 1rem; }
+        
         .profile-link-display {
             background: #f0f7fc;
             border: 1px solid #dbe4eb;
@@ -388,6 +410,7 @@
             gap: 0.3rem;
         }
         .profile-link-display .open-btn:hover { background: #1d4a66; transform: scale(1.02); }
+        
         .form-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.5rem; padding-bottom: 0.5rem; }
         .form-actions button {
             padding: 0.8rem;
@@ -617,18 +640,28 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- My Pages Section -->
                     <div class="form-group" style="border-top: 1px solid #dbe4eb; padding-top: 1rem; margin-top: 0.5rem;">
                         <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">
-                            <i class="fas fa-link" style="color: #2d6b8f;"></i> Link trang cá nhân
+                            <i class="fas fa-globe" style="color: #2d6b8f;"></i> My Pages
                         </label>
-                        <p style="font-size: 0.8rem; color: #6a7e8d; margin-bottom: 0.8rem;">Sao chép link này để chia sẻ trang cá nhân của bạn</p>
-                        <div class="profile-link-display" id="profileLinkDisplay">
-                            <span class="link-icon"><i class="fas fa-globe"></i></span>
-                            <input type="text" class="link-url" id="profileLinkUrl" readonly value="">
-                            <button type="button" class="copy-btn" id="copyProfileLink"><i class="fas fa-copy"></i> Sao chép</button>
-                            <a href="#" class="open-btn" id="openProfileLink" target="_blank"><i class="fas fa-external-link-alt"></i> Mở</a>
+                        <p style="font-size: 0.8rem; color: #6a7e8d; margin-bottom: 0.8rem;">Xem trang cá nhân của bạn ở chế độ công khai</p>
+                        
+                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <a href="#" id="viewMyPageBtn" class="my-pages-btn" target="_blank">
+                                <i class="fas fa-eye"></i> Xem trang cá nhân
+                            </a>
+                            <button type="button" class="copy-btn" id="copyMyPageLink" style="background: #1d3b4f; color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 40px; cursor: pointer; font-size: 0.85rem; font-family: inherit; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-copy"></i> Sao chép link
+                            </button>
+                        </div>
+                        <div class="profile-link-display" style="margin-top: 0.8rem;">
+                            <span class="link-icon"><i class="fas fa-link"></i></span>
+                            <input type="text" class="link-url" id="myPageLinkUrl" readonly value="">
                         </div>
                     </div>
+
                     <div class="form-actions">
                         <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Lưu thay đổi</button>
                         <button type="button" class="btn-secondary" id="settingsCancelBtn">Hủy</button>
@@ -759,9 +792,10 @@
             const settingsCancelBtn = document.getElementById('settingsCancelBtn');
             const avatarEditHint = document.getElementById('avatarEditHint');
 
-            const profileLinkUrl = document.getElementById('profileLinkUrl');
-            const copyProfileLink = document.getElementById('copyProfileLink');
-            const openProfileLink = document.getElementById('openProfileLink');
+            // My Pages elements
+            const viewMyPageBtn = document.getElementById('viewMyPageBtn');
+            const copyMyPageLink = document.getElementById('copyMyPageLink');
+            const myPageLinkUrl = document.getElementById('myPageLinkUrl');
 
             const socialZalo = document.getElementById('socialZalo');
             const socialDiscord = document.getElementById('socialDiscord');
@@ -789,22 +823,22 @@
 
             function getShareLink() {
                 const baseUrl = window.location.href.split('?')[0];
-                return baseUrl;
+                return baseUrl + '?view=true';
             }
 
-            function updateProfileLink() {
+            function updateMyPageLink() {
                 const url = getShareLink();
-                profileLinkUrl.value = url;
-                openProfileLink.href = url;
+                myPageLinkUrl.value = url;
+                viewMyPageBtn.href = url;
             }
 
-            copyProfileLink.addEventListener('click', function() {
-                const link = profileLinkUrl.value;
+            copyMyPageLink.addEventListener('click', function() {
+                const link = myPageLinkUrl.value;
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(link).then(function() {
-                        const originalText = copyProfileLink.innerHTML;
-                        copyProfileLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
-                        setTimeout(function() { copyProfileLink.innerHTML = originalText; }, 2000);
+                        const originalText = copyMyPageLink.innerHTML;
+                        copyMyPageLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
+                        setTimeout(function() { copyMyPageLink.innerHTML = originalText; }, 2000);
                     }).catch(function() { fallbackCopy(link); });
                 } else { fallbackCopy(link); }
             });
@@ -818,9 +852,9 @@
                 textarea.select();
                 try {
                     document.execCommand('copy');
-                    const originalText = copyProfileLink.innerHTML;
-                    copyProfileLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
-                    setTimeout(function() { copyProfileLink.innerHTML = originalText; }, 2000);
+                    const originalText = copyMyPageLink.innerHTML;
+                    copyMyPageLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
+                    setTimeout(function() { copyMyPageLink.innerHTML = originalText; }, 2000);
                 } catch (err) { alert('Không thể sao chép. Vui lòng sao chép thủ công.'); }
                 document.body.removeChild(textarea);
             }
@@ -871,6 +905,7 @@
                 settingsEmail.value = data.email || '';
                 settingsPhone.value = data.phone || '';
                 settingsAvatarPreview.src = data.avatar || profileAvatar.src;
+                updateMyPageLink();
             }
 
             function applySettings(data) {
@@ -882,6 +917,7 @@
                 if (data.experience) infoExperience.textContent = data.experience;
                 if (data.email) infoEmail.textContent = data.email;
                 if (data.phone) infoPhone.textContent = data.phone;
+                updateMyPageLink();
             }
 
             function openSettingsModal() {
@@ -903,7 +939,7 @@
                 socialTelegram.value = links.telegram || '';
                 socialFacebook.value = links.facebook || '';
                 socialTiktok.value = links.tiktok || '';
-                updateProfileLink();
+                updateMyPageLink();
             }
 
             function closeSettingsModal() {
@@ -1078,7 +1114,7 @@
             loadProfile();
             loadSocialLinks();
             renderAuthStatus();
-            updateProfileLink();
+            updateMyPageLink();
         })();
     </script>
 </body>

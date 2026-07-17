@@ -7,6 +7,7 @@
     
     <!-- ===== OPEN GRAPH - QUAN TRỌNG CHO CHIA SẺ ===== -->
     <meta property="og:title" content="Nguyễn Đức Anh | Developer" />
+    <meta property="og:description" content="Developer với 5+ năm kinh nghiệm. Chuyên phát triển web, UI/UX và giải pháp công nghệ." />
     <meta property="og:image" content="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=500&background=2d6b8f&color=fff&bold=true&font-size=0.5" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
@@ -17,9 +18,9 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nguyễn Đức Anh | Developer" />
+    <meta name="twitter:description" content="Developer với 5+ năm kinh nghiệm." />
     <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=500&background=2d6b8f&color=fff&bold=true&font-size=0.5" />
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -27,15 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
@@ -85,18 +79,8 @@
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
-        .settings-btn:hover {
-            background: #1d3b4f;
-            color: white;
-            transform: rotate(90deg) scale(1.05);
-            border-color: #1d3b4f;
-        }
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 2.2fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
+        .settings-btn:hover { background: #1d3b4f; color: white; transform: rotate(90deg) scale(1.05); border-color: #1d3b4f; }
+        .profile-grid { display: grid; grid-template-columns: 1fr 2.2fr; gap: 2.5rem; align-items: start; }
         .sidebar {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
@@ -109,11 +93,7 @@
             position: sticky;
             top: 2rem;
         }
-        .avatar-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 1.2rem;
-        }
+        .avatar-wrapper { position: relative; display: inline-block; margin-bottom: 1.2rem; }
         .avatar {
             width: 150px;
             height: 150px;
@@ -143,17 +123,8 @@
             transition: 0.2s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
-        .avatar-edit-hint:hover {
-            transform: scale(1.1);
-            background: #0f2a3b;
-        }
-        .sidebar h2 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #0b1a26;
-            margin-bottom: 0.2rem;
-        }
+        .avatar-edit-hint:hover { transform: scale(1.1); background: #0f2a3b; }
+        .sidebar h2 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.5px; color: #0b1a26; margin-bottom: 0.2rem; }
         .sidebar .tagline {
             font-weight: 400;
             color: #2c4a5e;
@@ -175,16 +146,8 @@
             padding: 0 0.2rem;
             text-align: left;
         }
-        .short-bio strong {
-            font-weight: 600;
-            color: #0b1a26;
-        }
-        .info-list {
-            list-style: none;
-            text-align: left;
-            margin: 1rem 0 1.5rem;
-            padding: 0;
-        }
+        .short-bio strong { font-weight: 600; color: #0b1a26; }
+        .info-list { list-style: none; text-align: left; margin: 1rem 0 1.5rem; padding: 0; }
         .info-list li {
             display: flex;
             align-items: center;
@@ -194,12 +157,7 @@
             font-size: 0.9rem;
             color: #1d3342;
         }
-        .info-list li i {
-            width: 1.8rem;
-            font-size: 1.1rem;
-            color: #2d6b8f;
-            text-align: center;
-        }
+        .info-list li i { width: 1.8rem; font-size: 1.1rem; color: #2d6b8f; text-align: center; }
         .social-links {
             display: flex;
             justify-content: center;
@@ -224,21 +182,14 @@
             will-change: transform;
             flex-shrink: 0;
         }
-        .social-links a:hover {
-            transform: scale(1.1) translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
+        .social-links a:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
         .social-links a.zalo:hover { background: #0183d1; color: white; border-color: #0183d1; }
         .social-links a.discord:hover { background: #5865F2; color: white; border-color: #5865F2; }
         .social-links a.youtube:hover { background: #FF0000; color: white; border-color: #FF0000; }
         .social-links a.telegram:hover { background: #0088cc; color: white; border-color: #0088cc; }
         .social-links a.facebook:hover { background: #1877F2; color: white; border-color: #1877F2; }
         .social-links a.tiktok:hover { background: #000000; color: #00f2ea; border-color: #000000; }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+        .main-content { display: flex; flex-direction: column; gap: 2rem; }
         .section-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -251,10 +202,7 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.03);
             padding-bottom: 0.5rem;
         }
-        .section-title i {
-            color: #2d6b8f;
-            font-size: 1.3rem;
-        }
+        .section-title i { color: #2d6b8f; font-size: 1.3rem; }
         .cta-button {
             margin-top: 0.5rem;
             display: inline-block;
@@ -273,20 +221,10 @@
             will-change: transform;
             -webkit-tap-highlight-color: transparent;
         }
-        .cta-button i {
-            margin-right: 0.5rem;
-        }
-        .cta-button:hover {
-            background: #0f2a3b;
-            transform: scale(1.02);
-            box-shadow: 0 12px 20px rgba(20, 50, 70, 0.25);
-        }
-        .cta-button.logout-btn {
-            background: #8f4a4a;
-        }
-        .cta-button.logout-btn:hover {
-            background: #6d3636;
-        }
+        .cta-button i { margin-right: 0.5rem; }
+        .cta-button:hover { background: #0f2a3b; transform: scale(1.02); box-shadow: 0 12px 20px rgba(20, 50, 70, 0.25); }
+        .cta-button.logout-btn { background: #8f4a4a; }
+        .cta-button.logout-btn:hover { background: #6d3636; }
         .footer-note {
             margin-top: 1.8rem;
             text-align: center;
@@ -312,9 +250,7 @@
             padding: 1.5rem;
             will-change: opacity;
         }
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
         .modal-box {
             background: white;
             border-radius: 2.5rem;
@@ -337,20 +273,10 @@
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: touch;
         }
-        .modal-scrollable::-webkit-scrollbar {
-            width: 5px;
-        }
-        .modal-scrollable::-webkit-scrollbar-track {
-            background: #f0f4f8;
-            border-radius: 10px;
-        }
-        .modal-scrollable::-webkit-scrollbar-thumb {
-            background: #b0c8d8;
-            border-radius: 10px;
-        }
-        .modal-scrollable::-webkit-scrollbar-thumb:hover {
-            background: #8aacbf;
-        }
+        .modal-scrollable::-webkit-scrollbar { width: 5px; }
+        .modal-scrollable::-webkit-scrollbar-track { background: #f0f4f8; border-radius: 10px; }
+        .modal-scrollable::-webkit-scrollbar-thumb { background: #b0c8d8; border-radius: 10px; }
+        .modal-scrollable::-webkit-scrollbar-thumb:hover { background: #8aacbf; }
         @keyframes modalFade {
             from { opacity: 0; transform: translateY(25px) scale(0.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -370,41 +296,13 @@
             z-index: 5;
             margin-bottom: 0.5rem;
         }
-        .modal-close:hover {
-            color: #1d3b4f;
-            transform: rotate(90deg);
-        }
-        .modal-box h3 {
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: #0b1a26;
-            text-align: center;
-            margin-bottom: 0.3rem;
-            clear: both;
-        }
-        .modal-box .sub {
-            text-align: center;
-            color: #496c82;
-            font-weight: 300;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1d3b4f;
-            margin-bottom: 0.3rem;
-        }
-        .form-group label i {
-            margin-right: 0.4rem;
-            color: #2d6b8f;
-        }
-        .form-group input,
-        .form-group textarea {
+        .modal-close:hover { color: #1d3b4f; transform: rotate(90deg); }
+        .modal-box h3 { font-size: 1.7rem; font-weight: 600; color: #0b1a26; text-align: center; margin-bottom: 0.3rem; clear: both; }
+        .modal-box .sub { text-align: center; color: #496c82; font-weight: 300; font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: #1d3b4f; margin-bottom: 0.3rem; }
+        .form-group label i { margin-right: 0.4rem; color: #2d6b8f; }
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 0.7rem 1rem;
             border-radius: 60px;
@@ -416,23 +314,14 @@
             -webkit-appearance: none;
             appearance: none;
         }
-        .form-group textarea {
-            border-radius: 20px;
-            resize: vertical;
-            min-height: 80px;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea { border-radius: 20px; resize: vertical; min-height: 80px; }
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: #2d6b8f;
             box-shadow: 0 0 0 3px rgba(45, 107, 143, 0.1);
             background: white;
         }
-        .form-group .social-input-row {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
+        .form-group .social-input-row { display: flex; align-items: center; gap: 0.6rem; }
         .form-group .social-input-row .social-icon-label {
             width: 36px;
             height: 36px;
@@ -446,11 +335,7 @@
             flex-shrink: 0;
             border: 1px solid #dbe4eb;
         }
-        .form-group .social-input-row input {
-            flex: 1;
-            padding: 0.6rem 0.9rem;
-            font-size: 0.85rem;
-        }
+        .form-group .social-input-row input { flex: 1; padding: 0.6rem 0.9rem; font-size: 0.85rem; }
         .profile-link-display {
             background: #f0f7fc;
             border: 1px solid #dbe4eb;
@@ -461,10 +346,7 @@
             gap: 0.8rem;
             flex-wrap: wrap;
         }
-        .profile-link-display .link-icon {
-            color: #2d6b8f;
-            font-size: 1rem;
-        }
+        .profile-link-display .link-icon { color: #2d6b8f; font-size: 1rem; }
         .profile-link-display .link-url {
             flex: 1;
             color: #1d3b4f;
@@ -488,10 +370,7 @@
             transition: 0.2s;
             white-space: nowrap;
         }
-        .profile-link-display .copy-btn:hover {
-            background: #0f2a3b;
-            transform: scale(1.02);
-        }
+        .profile-link-display .copy-btn:hover { background: #0f2a3b; transform: scale(1.02); }
         .profile-link-display .open-btn {
             background: #2d6b8f;
             color: white;
@@ -508,17 +387,8 @@
             align-items: center;
             gap: 0.3rem;
         }
-        .profile-link-display .open-btn:hover {
-            background: #1d4a66;
-            transform: scale(1.02);
-        }
-        .form-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            margin-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
+        .profile-link-display .open-btn:hover { background: #1d4a66; transform: scale(1.02); }
+        .form-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.5rem; padding-bottom: 0.5rem; }
         .form-actions button {
             padding: 0.8rem;
             border-radius: 60px;
@@ -530,22 +400,10 @@
             font-family: inherit;
             will-change: transform;
         }
-        .btn-primary {
-            background: #1d3b4f;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #0f2a3b;
-            transform: scale(1.01);
-        }
-        .btn-secondary {
-            background: transparent;
-            color: #2d6b8f;
-            border: 1px solid #dbe4eb !important;
-        }
-        .btn-secondary:hover {
-            background: #f0f5f9;
-        }
+        .btn-primary { background: #1d3b4f; color: white; }
+        .btn-primary:hover { background: #0f2a3b; transform: scale(1.01); }
+        .btn-secondary { background: transparent; color: #2d6b8f; border: 1px solid #dbe4eb !important; }
+        .btn-secondary:hover { background: #f0f5f9; }
         .avatar-upload-row {
             display: flex;
             align-items: center;
@@ -581,15 +439,8 @@
             font-family: inherit;
             transition: 0.2s;
         }
-        .avatar-upload-row input[type="file"]::file-selector-button:hover {
-            background: #0f2a3b;
-        }
-        .auth-status {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .avatar-upload-row input[type="file"]::file-selector-button:hover { background: #0f2a3b; }
+        .auth-status { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
         .auth-status .user-info {
             font-weight: 400;
             color: #1d3342;
@@ -598,95 +449,30 @@
             border-radius: 40px;
             font-size: 0.9rem;
         }
-        .auth-status .user-info i {
-            margin-right: 0.4rem;
-            color: #2d6b8f;
-        }
-        .view-mode .settings-btn,
-        .view-mode .avatar-edit-hint,
-        .view-mode .main-content {
-            display: none !important;
-        }
-        .view-mode .card {
-            padding-top: 1.5rem;
-        }
+        .auth-status .user-info i { margin-right: 0.4rem; color: #2d6b8f; }
+        .view-mode .settings-btn, .view-mode .avatar-edit-hint, .view-mode .main-content { display: none !important; }
+        .view-mode .card { padding-top: 1.5rem; }
         @media (max-width: 850px) {
-            .profile-grid {
-                grid-template-columns: 1fr;
-                gap: 1.8rem;
-            }
-            .card {
-                padding: 1.8rem;
-            }
-            .sidebar {
-                padding: 1.8rem 1.2rem;
-                position: static;
-            }
-            .settings-btn {
-                top: 1rem;
-                right: 1.2rem;
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
-            }
-            .modal-box {
-                max-height: 95vh;
-                padding: 1.8rem 1.2rem 1rem;
-            }
+            .profile-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+            .card { padding: 1.8rem; }
+            .sidebar { padding: 1.8rem 1.2rem; position: static; }
+            .settings-btn { top: 1rem; right: 1.2rem; width: 38px; height: 38px; font-size: 1rem; }
+            .modal-box { max-height: 95vh; padding: 1.8rem 1.2rem 1rem; }
         }
         @media (max-width: 480px) {
-            .card {
-                padding: 1.2rem;
-                border-radius: 2rem;
-            }
-            .sidebar h2 {
-                font-size: 1.6rem;
-            }
-            .social-links {
-                gap: 0.5rem;
-            }
-            .social-links a {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-            .auth-status {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .modal-box {
-                padding: 1.5rem 1rem 1rem;
-                border-radius: 1.8rem;
-                max-height: 98vh;
-            }
-            .avatar-upload-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .avatar-upload-row .avatar-preview {
-                align-self: center;
-            }
-            .form-group .social-input-row {
-                flex-wrap: wrap;
-            }
-            .profile-link-display {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.5rem;
-            }
-            .profile-link-display .link-url {
-                text-align: center;
-            }
-            .profile-link-display .copy-btn,
-            .profile-link-display .open-btn {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-            }
+            .card { padding: 1.2rem; border-radius: 2rem; }
+            .sidebar h2 { font-size: 1.6rem; }
+            .social-links { gap: 0.5rem; }
+            .social-links a { width: 40px; height: 40px; font-size: 1rem; }
+            .cta-button { width: 100%; text-align: center; }
+            .auth-status { flex-direction: column; align-items: stretch; }
+            .modal-box { padding: 1.5rem 1rem 1rem; border-radius: 1.8rem; max-height: 98vh; }
+            .avatar-upload-row { flex-direction: column; align-items: stretch; }
+            .avatar-upload-row .avatar-preview { align-self: center; }
+            .form-group .social-input-row { flex-wrap: wrap; }
+            .profile-link-display { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+            .profile-link-display .link-url { text-align: center; }
+            .profile-link-display .copy-btn, .profile-link-display .open-btn { width: 100%; text-align: center; justify-content: center; }
         }
         @media (hover: none) {
             .cta-button:hover { transform: none; }
@@ -697,32 +483,24 @@
 </head>
 <body>
     <div class="card" id="mainCard">
-        <button class="settings-btn" id="settingsBtn" aria-label="Cài đặt">
-            <i class="fas fa-cog"></i>
-        </button>
-
+        <button class="settings-btn" id="settingsBtn" aria-label="Cài đặt"><i class="fas fa-cog"></i></button>
         <div class="profile-grid">
             <aside class="sidebar">
                 <div class="avatar-wrapper">
                     <img class="avatar" id="profileAvatar" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Avatar">
-                    <div class="avatar-edit-hint" id="avatarEditHint" title="Đổi ảnh đại diện">
-                        <i class="fas fa-camera"></i>
-                    </div>
+                    <div class="avatar-edit-hint" id="avatarEditHint" title="Đổi ảnh đại diện"><i class="fas fa-camera"></i></div>
                 </div>
                 <h2 id="profileName">Nguyễn Đức Anh</h2>
                 <div class="tagline" id="profileTagline"><i class="fas fa-code" style="margin-right: 6px;"></i> Developer</div>
-
                 <div class="short-bio" id="shortBio">
                     <strong>Xin chào!</strong> Tôi là Nguyễn Đức Anh, một nhà phát triển web đam mê công nghệ và sáng tạo. Tôi thích xây dựng những sản phẩm trực quan, tối ưu trải nghiệm người dùng và luôn học hỏi những xu hướng mới.
                 </div>
-
                 <ul class="info-list" id="infoList">
                     <li><i class="fas fa-map-pin"></i> <span id="infoLocation">Hà Nam, Việt Nam</span></li>
                     <li><i class="fas fa-briefcase"></i> <span id="infoExperience">5+ năm kinh nghiệm</span></li>
                     <li><i class="fas fa-envelope"></i> <span id="infoEmail">ducanhnen@gmail.com</span></li>
                     <li><i class="fas fa-phone-alt"></i> <span id="infoPhone">0325976017</span></li>
                 </ul>
-
                 <div class="social-links" id="socialLinks">
                     <a href="#" class="zalo" data-platform="zalo" target="_blank" title="Zalo"><i class="fas fa-comment-dots"></i></a>
                     <a href="#" class="discord" data-platform="discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
@@ -732,12 +510,9 @@
                     <a href="#" class="tiktok" data-platform="tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </aside>
-
             <main class="main-content" id="adminPanel">
                 <section>
-                    <div class="section-title">
-                        <i class="fas fa-lock"></i> Tài khoản
-                    </div>
+                    <div class="section-title"><i class="fas fa-lock"></i> Tài khoản</div>
                     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
                         <div class="auth-status" id="authStatus"></div>
                         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
@@ -748,7 +523,6 @@
                 </section>
             </main>
         </div>
-
         <div class="footer-note">
             <i class="fas fa-crown" style="opacity: 0.3; margin-right: 6px;"></i>
             Designed with <i class="fas fa-heart" style="color: #b54a4a; opacity: 0.6;"></i> · © 2026 Nguyễn Đức Anh
@@ -760,7 +534,6 @@
             <button class="modal-close" id="settingsModalClose">&times;</button>
             <h3><i class="fas fa-cog" style="margin-right: 0.5rem; color: #2d6b8f;"></i> Cài đặt</h3>
             <p class="sub">Thay đổi thông tin cá nhân và liên kết</p>
-
             <div class="modal-scrollable">
                 <form id="settingsForm">
                     <div class="form-group">
@@ -770,46 +543,37 @@
                             <input type="file" id="avatarInput" accept="image/*">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="settingsName">Họ và tên</label>
                         <input type="text" id="settingsName" placeholder="Nguyễn Đức Anh">
                     </div>
-
                     <div class="form-group">
                         <label for="settingsTagline">Chức danh / Tagline</label>
                         <input type="text" id="settingsTagline" placeholder="Developer">
                     </div>
-
                     <div class="form-group">
                         <label for="settingsBio">Giới thiệu bản thân</label>
                         <textarea id="settingsBio" rows="3" placeholder="Viết giới thiệu về bạn..."></textarea>
                     </div>
-
                     <div class="form-group">
                         <label for="settingsLocation">Địa chỉ</label>
                         <input type="text" id="settingsLocation" placeholder="Hà Nam, Việt Nam">
                     </div>
-
                     <div class="form-group">
                         <label for="settingsExperience">Kinh nghiệm</label>
                         <input type="text" id="settingsExperience" placeholder="5+ năm kinh nghiệm">
                     </div>
-
                     <div class="form-group">
                         <label for="settingsEmail">Email</label>
                         <input type="email" id="settingsEmail" placeholder="ducanhnen@gmail.com">
                     </div>
-
                     <div class="form-group">
                         <label for="settingsPhone">Số điện thoại</label>
                         <input type="text" id="settingsPhone" placeholder="0325976017">
                     </div>
-
                     <div class="form-group" style="margin-top: 0.5rem; border-top: 1px solid #dbe4eb; padding-top: 1rem;">
                         <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">Liên kết mạng xã hội</label>
                         <p style="font-size: 0.8rem; color: #6a7e8d; margin-bottom: 0.8rem;">Nhập URL đầy đủ (ví dụ: https://zalo.me/username)</p>
-
                         <div class="form-group">
                             <label><i class="fas fa-comment-dots" style="color: #0183d1;"></i> Zalo</label>
                             <div class="social-input-row">
@@ -817,7 +581,6 @@
                                 <input type="url" id="socialZalo" placeholder="https://zalo.me/...">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label><i class="fab fa-discord" style="color: #5865F2;"></i> Discord</label>
                             <div class="social-input-row">
@@ -825,7 +588,6 @@
                                 <input type="url" id="socialDiscord" placeholder="https://discord.com/...">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label><i class="fab fa-youtube" style="color: #FF0000;"></i> YouTube</label>
                             <div class="social-input-row">
@@ -833,7 +595,6 @@
                                 <input type="url" id="socialYoutube" placeholder="https://youtube.com/...">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label><i class="fab fa-telegram-plane" style="color: #0088cc;"></i> Telegram</label>
                             <div class="social-input-row">
@@ -841,7 +602,6 @@
                                 <input type="url" id="socialTelegram" placeholder="https://t.me/...">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label><i class="fab fa-facebook-f" style="color: #1877F2;"></i> Facebook</label>
                             <div class="social-input-row">
@@ -849,7 +609,6 @@
                                 <input type="url" id="socialFacebook" placeholder="https://facebook.com/...">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label><i class="fab fa-tiktok" style="color: #000000;"></i> TikTok</label>
                             <div class="social-input-row">
@@ -858,13 +617,11 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group" style="border-top: 1px solid #dbe4eb; padding-top: 1rem; margin-top: 0.5rem;">
                         <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">
                             <i class="fas fa-link" style="color: #2d6b8f;"></i> Link trang cá nhân
                         </label>
                         <p style="font-size: 0.8rem; color: #6a7e8d; margin-bottom: 0.8rem;">Sao chép link này để chia sẻ trang cá nhân của bạn</p>
-
                         <div class="profile-link-display" id="profileLinkDisplay">
                             <span class="link-icon"><i class="fas fa-globe"></i></span>
                             <input type="text" class="link-url" id="profileLinkUrl" readonly value="">
@@ -872,7 +629,6 @@
                             <a href="#" class="open-btn" id="openProfileLink" target="_blank"><i class="fas fa-external-link-alt"></i> Mở</a>
                         </div>
                     </div>
-
                     <div class="form-actions">
                         <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Lưu thay đổi</button>
                         <button type="button" class="btn-secondary" id="settingsCancelBtn">Hủy</button>
@@ -887,7 +643,6 @@
             <button class="modal-close" id="modalCloseBtn">&times;</button>
             <h3 id="modalTitle">Đăng nhập</h3>
             <p class="sub" id="modalSub">Vui lòng nhập thông tin của bạn</p>
-
             <div class="modal-scrollable">
                 <form id="authForm" autocomplete="off">
                     <div class="form-group" id="nameGroup">
@@ -902,13 +657,11 @@
                         <label for="passwordInput">Mật khẩu</label>
                         <input type="password" id="passwordInput" placeholder="••••••••" required minlength="4">
                     </div>
-
                     <div class="form-actions">
                         <button type="submit" class="btn-primary" id="submitBtn">Đăng nhập</button>
                         <button type="button" class="btn-secondary" id="switchFormBtn">Chuyển sang Đăng ký</button>
                     </div>
                 </form>
-
                 <div class="toggle-form" id="toggleText">
                     Chưa có tài khoản? <a id="switchLink">Đăng ký ngay</a>
                 </div>
@@ -920,7 +673,6 @@
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             const isViewMode = urlParams.get('view') === 'true';
-
             const mainCard = document.getElementById('mainCard');
 
             const defaultProfile = {
@@ -945,15 +697,11 @@
             const socialLinks = document.getElementById('socialLinks');
 
             function getProfile() {
-                try {
-                    return JSON.parse(localStorage.getItem('mywebsite_profile')) || null;
-                } catch { return null; }
+                try { return JSON.parse(localStorage.getItem('mywebsite_profile')) || null; } catch { return null; }
             }
 
             function getSocialLinks() {
-                try {
-                    return JSON.parse(localStorage.getItem('mywebsite_social')) || {};
-                } catch { return {}; }
+                try { return JSON.parse(localStorage.getItem('mywebsite_social')) || {}; } catch { return {}; }
             }
 
             function loadProfileData() {
@@ -974,11 +722,7 @@
                 const anchors = socialLinks.querySelectorAll('a');
                 anchors.forEach(a => {
                     const platform = a.dataset.platform;
-                    if (links[platform]) {
-                        a.href = links[platform];
-                    } else {
-                        a.href = '#';
-                    }
+                    if (links[platform]) { a.href = links[platform]; } else { a.href = '#'; }
                 });
             }
 
@@ -1060,15 +804,9 @@
                     navigator.clipboard.writeText(link).then(function() {
                         const originalText = copyProfileLink.innerHTML;
                         copyProfileLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
-                        setTimeout(function() {
-                            copyProfileLink.innerHTML = originalText;
-                        }, 2000);
-                    }).catch(function() {
-                        fallbackCopy(link);
-                    });
-                } else {
-                    fallbackCopy(link);
-                }
+                        setTimeout(function() { copyProfileLink.innerHTML = originalText; }, 2000);
+                    }).catch(function() { fallbackCopy(link); });
+                } else { fallbackCopy(link); }
             });
 
             function fallbackCopy(text) {
@@ -1082,29 +820,19 @@
                     document.execCommand('copy');
                     const originalText = copyProfileLink.innerHTML;
                     copyProfileLink.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
-                    setTimeout(function() {
-                        copyProfileLink.innerHTML = originalText;
-                    }, 2000);
-                } catch (err) {
-                    alert('Không thể sao chép. Vui lòng sao chép thủ công.');
-                }
+                    setTimeout(function() { copyProfileLink.innerHTML = originalText; }, 2000);
+                } catch (err) { alert('Không thể sao chép. Vui lòng sao chép thủ công.'); }
                 document.body.removeChild(textarea);
             }
 
-            function saveSocialLinks(data) {
-                localStorage.setItem(SOCIAL_KEY, JSON.stringify(data));
-            }
+            function saveSocialLinks(data) { localStorage.setItem(SOCIAL_KEY, JSON.stringify(data)); }
 
             function loadSocialLinks() {
                 const links = getSocialLinks();
                 const anchors = socialLinks.querySelectorAll('a');
                 anchors.forEach(a => {
                     const platform = a.dataset.platform;
-                    if (links[platform]) {
-                        a.href = links[platform];
-                    } else {
-                        a.href = '#';
-                    }
+                    if (links[platform]) { a.href = links[platform]; } else { a.href = '#'; }
                 });
                 socialZalo.value = links.zalo || '';
                 socialDiscord.value = links.discord || '';
@@ -1118,17 +846,11 @@
                 const anchors = socialLinks.querySelectorAll('a');
                 anchors.forEach(a => {
                     const platform = a.dataset.platform;
-                    if (links[platform]) {
-                        a.href = links[platform];
-                    } else {
-                        a.href = '#';
-                    }
+                    if (links[platform]) { a.href = links[platform]; } else { a.href = '#'; }
                 });
             }
 
-            function saveProfile(data) {
-                localStorage.setItem(PROFILE_KEY, JSON.stringify(data));
-            }
+            function saveProfile(data) { localStorage.setItem(PROFILE_KEY, JSON.stringify(data)); }
 
             function loadProfile() {
                 const profile = getProfile();
@@ -1141,7 +863,6 @@
                 if (data.experience) infoExperience.textContent = data.experience;
                 if (data.email) infoEmail.textContent = data.email;
                 if (data.phone) infoPhone.textContent = data.phone;
-
                 settingsName.value = data.name || '';
                 settingsTagline.value = data.tagline || '';
                 settingsBio.value = data.bio || '';
@@ -1153,10 +874,7 @@
             }
 
             function applySettings(data) {
-                if (data.avatar) {
-                    profileAvatar.src = data.avatar;
-                    settingsAvatarPreview.src = data.avatar;
-                }
+                if (data.avatar) { profileAvatar.src = data.avatar; settingsAvatarPreview.src = data.avatar; }
                 if (data.name) profileName.textContent = data.name;
                 if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
                 if (data.bio) shortBio.innerHTML = data.bio;
@@ -1178,7 +896,6 @@
                 settingsPhone.value = infoPhone.textContent;
                 settingsAvatarPreview.src = profileAvatar.src;
                 avatarInput.value = '';
-
                 const links = getSocialLinks();
                 socialZalo.value = links.zalo || '';
                 socialDiscord.value = links.discord || '';
@@ -1186,7 +903,6 @@
                 socialTelegram.value = links.telegram || '';
                 socialFacebook.value = links.facebook || '';
                 socialTiktok.value = links.tiktok || '';
-
                 updateProfileLink();
             }
 
@@ -1199,16 +915,13 @@
                 const file = e.target.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(ev) {
-                        settingsAvatarPreview.src = ev.target.result;
-                    };
+                    reader.onload = function(ev) { settingsAvatarPreview.src = ev.target.result; };
                     reader.readAsDataURL(file);
                 }
             });
 
             settingsForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-
                 const profile = {
                     avatar: settingsAvatarPreview.src,
                     name: settingsName.value.trim() || profileName.textContent,
@@ -1221,7 +934,6 @@
                 };
                 saveProfile(profile);
                 applySettings(profile);
-
                 const socialLinksData = {
                     zalo: socialZalo.value.trim(),
                     discord: socialDiscord.value.trim(),
@@ -1230,12 +942,9 @@
                     facebook: socialFacebook.value.trim(),
                     tiktok: socialTiktok.value.trim()
                 };
-                Object.keys(socialLinksData).forEach(key => {
-                    if (!socialLinksData[key]) delete socialLinksData[key];
-                });
+                Object.keys(socialLinksData).forEach(key => { if (!socialLinksData[key]) delete socialLinksData[key]; });
                 saveSocialLinks(socialLinksData);
                 applySocialLinks(socialLinksData);
-
                 closeSettingsModal();
                 renderAuthStatus();
             });
@@ -1244,35 +953,17 @@
             settingsModalClose.addEventListener('click', closeSettingsModal);
             settingsBtn.addEventListener('click', openSettingsModal);
             avatarEditHint.addEventListener('click', openSettingsModal);
-
-            settingsModal.addEventListener('click', function(e) {
-                if (e.target === settingsModal) closeSettingsModal();
-            });
-
+            settingsModal.addEventListener('click', function(e) { if (e.target === settingsModal) closeSettingsModal(); });
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && settingsModal.classList.contains('active')) {
-                    closeSettingsModal();
-                }
+                if (e.key === 'Escape' && settingsModal.classList.contains('active')) { closeSettingsModal(); }
             });
 
-            function getUsers() {
-                try { return JSON.parse(localStorage.getItem(USERS_KEY)) || []; } catch { return []; }
-            }
-
-            function saveUsers(users) {
-                localStorage.setItem(USERS_KEY, JSON.stringify(users));
-            }
-
-            function getSession() {
-                try { return JSON.parse(localStorage.getItem(SESSION_KEY)) || null; } catch { return null; }
-            }
-
+            function getUsers() { try { return JSON.parse(localStorage.getItem(USERS_KEY)) || []; } catch { return []; } }
+            function saveUsers(users) { localStorage.setItem(USERS_KEY, JSON.stringify(users)); }
+            function getSession() { try { return JSON.parse(localStorage.getItem(SESSION_KEY)) || null; } catch { return null; } }
             function saveSession(email) {
-                if (email) {
-                    localStorage.setItem(SESSION_KEY, JSON.stringify({ email, loggedInAt: Date.now() }));
-                } else {
-                    localStorage.removeItem(SESSION_KEY);
-                }
+                if (email) { localStorage.setItem(SESSION_KEY, JSON.stringify({ email, loggedInAt: Date.now() })); } 
+                else { localStorage.removeItem(SESSION_KEY); }
             }
 
             function renderAuthStatus() {
@@ -1294,8 +985,7 @@
                         });
                     }
                 } else {
-                    authStatus.innerHTML =
-                        `<span class="user-info" style="background: rgba(0,0,0,0.03);"><i class="fas fa-user"></i> Chưa đăng nhập</span>`;
+                    authStatus.innerHTML = `<span class="user-info" style="background: rgba(0,0,0,0.03);"><i class="fas fa-user"></i> Chưa đăng nhập</span>`;
                 }
             }
 
@@ -1372,10 +1062,8 @@
                 }
             }
 
-            loginOpenBtn.addEventListener('click', function(e) { e.preventDefault();
-                openModal('login'); });
-            registerOpenBtn.addEventListener('click', function(e) { e.preventDefault();
-                openModal('register'); });
+            loginOpenBtn.addEventListener('click', function(e) { e.preventDefault(); openModal('login'); });
+            registerOpenBtn.addEventListener('click', function(e) { e.preventDefault(); openModal('register'); });
             modalCloseBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
             switchFormBtn.addEventListener('click', function() {

@@ -20,521 +20,438 @@
     <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=500&background=2d6b8f&color=fff&bold=true&font-size=0.5" />
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        html { -webkit-text-size-adjust: 100%; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #e8f0f5;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            color: #1e2b37;
-            line-height: 1.6;
-            overflow-y: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 16px;
+            color: #1a2a38;
+            line-height: 1.5;
         }
+        
         .card {
-            max-width: 600px;
+            max-width: 420px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 2.5rem;
-            box-shadow: 0 30px 50px rgba(0, 20, 30, 0.15), 0 10px 25px rgba(0, 0, 0, 0.05);
-            padding: 1.8rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 24px 20px 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.3);
             position: relative;
         }
+        
         .settings-btn {
             position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            top: 14px;
+            right: 14px;
+            background: #f0f4f8;
+            border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            color: #1d3b4f;
+            font-size: 15px;
+            color: #2d4a5e;
             cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            z-index: 10;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            z-index: 5;
         }
-        .settings-btn:hover { background: #1d3b4f; color: white; transform: rotate(90deg) scale(1.05); border-color: #1d3b4f; }
+        .settings-btn:hover { background: #2d4a5e; color: white; }
         
-        .profile-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        /* Profile Info - 1 cột duy nhất */
-        .profile-info {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-        }
-        .avatar-wrapper { position: relative; display: inline-block; margin-bottom: 1rem; }
+        .avatar-wrap { text-align: center; margin-bottom: 12px; position: relative; }
         .avatar {
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            box-shadow: 0 10px 25px rgba(0, 40, 60, 0.15);
+            box-shadow: 0 4px 16px rgba(0,40,60,0.12);
             background: #cbdbe8;
-            display: block;
+            display: inline-block;
         }
-        .avatar-edit-hint {
+        .avatar-edit {
             position: absolute;
-            bottom: 4px;
-            right: 4px;
-            background: #1d3b4f;
+            bottom: 2px;
+            right: calc(50% - 62px);
+            background: #2d4a5e;
             color: white;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
+            font-size: 12px;
             border: 2px solid white;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
         }
-        .avatar-edit-hint:hover { transform: scale(1.1); background: #0f2a3b; }
-        .profile-info h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.5px; color: #0b1a26; margin-bottom: 0.2rem; }
-        .profile-info .tagline {
+        .avatar-edit:hover { transform: scale(1.1); background: #1a3345; }
+        
+        .name { font-size: 22px; font-weight: 700; text-align: center; color: #0a1a26; }
+        .tagline {
+            text-align: center;
+            font-size: 14px;
             font-weight: 400;
-            color: #2c4a5e;
-            background: rgba(60, 110, 140, 0.08);
+            color: #2d4a5e;
+            background: #eef4f8;
             display: inline-block;
-            padding: 0.2rem 1rem;
+            padding: 2px 16px;
             border-radius: 40px;
-            font-size: 0.85rem;
-            letter-spacing: 0.3px;
-            margin-bottom: 0.8rem;
-            border: 1px solid rgba(60, 110, 140, 0.1);
+            margin: 4px auto 12px;
+            border: 1px solid #e0e8ef;
         }
-        .short-bio {
-            font-size: 0.9rem;
+        .tagline-wrap { text-align: center; }
+        
+        .bio {
+            font-size: 14px;
             color: #1f3849;
             font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 1rem;
-            padding: 0 0.2rem;
+            margin-bottom: 14px;
+            padding: 0 2px;
             text-align: left;
         }
-        .short-bio strong { font-weight: 600; color: #0b1a26; }
-        .info-list { list-style: none; text-align: left; margin: 0.8rem 0 1.2rem; padding: 0; }
+        .bio strong { font-weight: 600; color: #0a1a26; }
+        
+        .info-list { list-style: none; margin: 10px 0 14px; padding: 0; }
         .info-list li {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-            font-size: 0.85rem;
-            color: #1d3342;
+            gap: 8px;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4f8;
+            font-size: 14px;
+            color: #1a2a38;
         }
-        .info-list li i { width: 1.6rem; font-size: 1rem; color: #2d6b8f; text-align: center; }
+        .info-list li i { width: 20px; font-size: 14px; color: #2d6b8f; text-align: center; }
+        
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 6px;
             flex-wrap: wrap;
-            margin: 1rem 0 0.3rem;
+            margin: 12px 0 4px;
         }
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            background: white;
-            color: #1d3b4f;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: #f5f8fa;
+            color: #2d4a5e;
+            font-size: 16px;
+            transition: 0.2s;
+            border: 1px solid #e8eef2;
             text-decoration: none;
         }
-        .social-links a:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
-        .social-links a.zalo:hover { background: #0183d1; color: white; border-color: #0183d1; }
-        .social-links a.discord:hover { background: #5865F2; color: white; border-color: #5865F2; }
-        .social-links a.youtube:hover { background: #FF0000; color: white; border-color: #FF0000; }
-        .social-links a.telegram:hover { background: #0088cc; color: white; border-color: #0088cc; }
-        .social-links a.facebook:hover { background: #1877F2; color: white; border-color: #1877F2; }
-        .social-links a.tiktok:hover { background: #000000; color: #00f2ea; border-color: #000000; }
+        .social-links a:hover { transform: scale(1.08); background: #2d4a5e; color: white; border-color: #2d4a5e; }
         
-        /* Phần tài khoản - 1 cột */
         .account-section {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #e8eef2;
         }
         .section-title {
-            font-size: 1.1rem;
+            font-size: 15px;
             font-weight: 600;
-            color: #0b1a26;
+            color: #0a1a26;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.8rem;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.03);
-            padding-bottom: 0.4rem;
+            gap: 8px;
+            margin-bottom: 10px;
         }
-        .section-title i { color: #2d6b8f; font-size: 1.2rem; }
+        .section-title i { color: #2d6b8f; font-size: 14px; }
         
         .account-row {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 0.8rem;
+            gap: 8px;
         }
-        .auth-status { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+        .auth-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .auth-status .user-info {
             font-weight: 400;
-            color: #1d3342;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 0.3rem 1rem;
+            color: #1a2a38;
+            background: #f0f4f8;
+            padding: 4px 14px;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 13px;
         }
-        .auth-status .user-info i { margin-right: 0.4rem; color: #2d6b8f; }
-        .auth-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .auth-status .user-info i { margin-right: 4px; color: #2d6b8f; }
         
-        .cta-button {
+        .btn {
             display: inline-block;
-            background: #1d3b4f;
+            background: #2d4a5e;
             color: white;
-            padding: 0.6rem 1.5rem;
+            padding: 6px 18px;
             border-radius: 60px;
-            text-decoration: none;
+            border: none;
             font-weight: 500;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 12px rgba(25, 60, 80, 0.15);
+            font-size: 13px;
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
+            transition: 0.2s;
+            font-family: inherit;
+            text-decoration: none;
         }
-        .cta-button i { margin-right: 0.4rem; }
-        .cta-button:hover { background: #0f2a3b; transform: scale(1.02); }
-        .cta-button.logout-btn { background: #8f4a4a; }
-        .cta-button.logout-btn:hover { background: #6d3636; }
-        .cta-button.register-btn { background: #4a6a7e; }
+        .btn i { margin-right: 4px; }
+        .btn:hover { background: #1a3345; transform: scale(1.02); }
+        .btn-logout { background: #8f4a4a; }
+        .btn-logout:hover { background: #6d3636; }
+        .btn-register { background: #4a6a7e; }
         
         .footer-note {
-            margin-top: 1.5rem;
+            margin-top: 16px;
             text-align: center;
-            font-size: 0.75rem;
-            color: #496c82;
-            border-top: 1px solid rgba(0, 0, 0, 0.03);
-            padding-top: 1rem;
+            font-size: 11px;
+            color: #6a7e8d;
+            border-top: 1px solid #e8eef2;
+            padding-top: 12px;
             letter-spacing: 0.2px;
         }
         
-        /* Ẩn khi ở chế độ xem */
+        /* ẨN KHI VIEW MODE - DÙNG JAVASCRIPT ĐIỀU KHIỂN */
         .view-mode .settings-btn,
-        .view-mode .avatar-edit-hint,
+        .view-mode .avatar-edit,
         .view-mode .account-section {
             display: none !important;
         }
-        .view-mode .card { padding-top: 1.5rem; }
+        .view-mode .card { padding-top: 20px; }
         
-        /* Modal */
+        /* MODAL */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            background: rgba(0,0,0,0.4);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            padding: 1.5rem;
+            padding: 16px;
         }
         .modal-overlay.active { display: flex; }
         .modal-box {
             background: white;
-            border-radius: 2rem;
+            border-radius: 20px;
             max-width: 400px;
             width: 100%;
             max-height: 90vh;
-            padding: 2rem 1.8rem 1.5rem;
-            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.2);
+            padding: 20px 18px 16px;
+            box-shadow: 0 40px 70px rgba(0,0,0,0.2);
             position: relative;
-            animation: modalFade 0.25s ease;
+            animation: modalFade 0.2s ease;
             display: flex;
             flex-direction: column;
         }
-        .modal-scrollable {
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-scroll {
             flex: 1;
             overflow-y: auto;
             padding-right: 4px;
             margin-right: -4px;
             -webkit-overflow-scrolling: touch;
         }
-        .modal-scrollable::-webkit-scrollbar { width: 5px; }
-        .modal-scrollable::-webkit-scrollbar-track { background: #f0f4f8; border-radius: 10px; }
-        .modal-scrollable::-webkit-scrollbar-thumb { background: #b0c8d8; border-radius: 10px; }
-        @keyframes modalFade {
-            from { opacity: 0; transform: translateY(25px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        .modal-scroll::-webkit-scrollbar { width: 4px; }
+        .modal-scroll::-webkit-scrollbar-thumb { background: #b0c8d8; border-radius: 10px; }
+        
         .modal-close {
             position: sticky;
             top: 0; right: 0; float: right;
-            font-size: 1.5rem;
+            font-size: 22px;
             cursor: pointer;
             color: #6a7e8d;
-            transition: 0.2s;
             background: none;
             border: none;
             z-index: 5;
-            margin-bottom: 0.5rem;
+            margin-bottom: 4px;
         }
-        .modal-close:hover { color: #1d3b4f; transform: rotate(90deg); }
-        .modal-box h3 { font-size: 1.5rem; font-weight: 600; color: #0b1a26; text-align: center; margin-bottom: 0.2rem; clear: both; }
-        .modal-box .sub { text-align: center; color: #496c82; font-weight: 300; font-size: 0.9rem; margin-bottom: 1.2rem; }
-        .form-group { margin-bottom: 1rem; }
-        .form-group label { display: block; font-size: 0.8rem; font-weight: 500; color: #1d3b4f; margin-bottom: 0.2rem; }
-        .form-group label i { margin-right: 0.3rem; color: #2d6b8f; }
+        .modal-close:hover { color: #1a2a38; transform: rotate(90deg); }
+        .modal-box h3 { font-size: 20px; font-weight: 600; color: #0a1a26; text-align: center; clear: both; }
+        .modal-box .sub { text-align: center; color: #6a7e8d; font-size: 13px; margin-bottom: 14px; }
+        
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 500; color: #1a2a38; margin-bottom: 3px; }
+        .form-group label i { margin-right: 4px; color: #2d6b8f; }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.6rem 0.9rem;
+            padding: 8px 12px;
             border-radius: 60px;
             border: 1px solid #dbe4eb;
             background: #f8fafc;
-            font-size: 0.85rem;
+            font-size: 13px;
             transition: 0.2s;
             font-family: inherit;
-            -webkit-appearance: none;
-            appearance: none;
         }
-        .form-group textarea { border-radius: 20px; resize: vertical; min-height: 70px; }
+        .form-group textarea { border-radius: 16px; min-height: 60px; resize: vertical; }
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: #2d6b8f;
-            box-shadow: 0 0 0 3px rgba(45, 107, 143, 0.1);
+            box-shadow: 0 0 0 3px rgba(45,107,143,0.08);
             background: white;
         }
-        .form-actions { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; padding-bottom: 0.5rem; }
+        
+        .form-actions { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
         .form-actions button {
-            padding: 0.7rem;
+            padding: 8px;
             border-radius: 60px;
             border: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 14px;
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
         }
-        .btn-primary { background: #1d3b4f; color: white; }
-        .btn-primary:hover { background: #0f2a3b; transform: scale(1.01); }
+        .btn-primary { background: #2d4a5e; color: white; }
+        .btn-primary:hover { background: #1a3345; }
         .btn-secondary { background: transparent; color: #2d6b8f; border: 1px solid #dbe4eb !important; }
         .btn-secondary:hover { background: #f0f5f9; }
-        .toggle-form { text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #496c82; }
-        .toggle-form a { color: #1d3b4f; font-weight: 600; cursor: pointer; text-decoration: none; }
-        .toggle-form a:hover { text-decoration: underline; }
+        .toggle-form { text-align: center; margin-top: 10px; font-size: 13px; color: #6a7e8d; }
+        .toggle-form a { color: #2d4a5e; font-weight: 600; cursor: pointer; text-decoration: none; }
         
-        /* Settings Modal - My Pages */
-        .my-pages-btn {
-            background: #1d3b4f;
-            color: white;
-            border: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-family: inherit;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-weight: 500;
-            text-decoration: none;
+        .social-input-row { display: flex; align-items: center; gap: 6px; }
+        .social-input-row .social-icon {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: #f0f4f8; display: flex; align-items: center; justify-content: center;
+            font-size: 13px; color: #2d4a5e; flex-shrink: 0; border: 1px solid #dbe4eb;
         }
-        .my-pages-btn:hover { background: #0f2a3b; transform: scale(1.02); }
-        .profile-link-display {
-            background: #f0f7fc;
-            border: 1px solid #dbe4eb;
-            border-radius: 60px;
-            padding: 0.5rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .profile-link-display .link-icon { color: #2d6b8f; font-size: 0.9rem; }
-        .profile-link-display .link-url {
-            flex: 1;
-            color: #1d3b4f;
-            font-size: 0.8rem;
-            word-break: break-all;
-            min-width: 120px;
-            background: none;
-            border: none;
-            font-family: inherit;
-            padding: 0.1rem 0;
-        }
-        .profile-link-display .copy-btn {
-            background: #1d3b4f;
-            color: white;
-            border: none;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 0.7rem;
-            font-family: inherit;
-            transition: 0.2s;
-            white-space: nowrap;
-        }
-        .profile-link-display .copy-btn:hover { background: #0f2a3b; }
+        .social-input-row input { flex: 1; padding: 6px 10px; font-size: 12px; border-radius: 60px; border: 1px solid #dbe4eb; background: #f8fafc; }
         
-        .social-input-row { display: flex; align-items: center; gap: 0.5rem; }
-        .social-input-row .social-icon-label {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #f0f4f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #1d3b4f;
-            flex-shrink: 0;
-            border: 1px solid #dbe4eb;
-        }
-        .social-input-row input { flex: 1; padding: 0.5rem 0.8rem; font-size: 0.8rem; border-radius: 60px; border: 1px solid #dbe4eb; background: #f8fafc; }
-        .avatar-upload-row { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-        .avatar-upload-row .avatar-preview {
-            width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
+        .avatar-upload-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .avatar-upload-row .preview {
+            width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
             border: 2px solid #dbe4eb; background: #cbdbe8; flex-shrink: 0;
         }
         .avatar-upload-row input[type="file"] {
-            flex: 1; padding: 0.4rem; font-size: 0.8rem;
-            border: 1px dashed #dbe4eb; border-radius: 40px; background: #f8fafc; cursor: pointer; min-width: 0;
+            flex: 1; padding: 4px 8px; font-size: 12px;
+            border: 1px dashed #dbe4eb; border-radius: 40px; background: #f8fafc; cursor: pointer;
         }
         .avatar-upload-row input[type="file"]::file-selector-button {
-            padding: 0.2rem 0.8rem; border-radius: 40px; border: none;
-            background: #1d3b4f; color: white; cursor: pointer; font-family: inherit; transition: 0.2s;
+            padding: 4px 12px; border-radius: 40px; border: none;
+            background: #2d4a5e; color: white; cursor: pointer; font-family: inherit;
         }
-        .avatar-upload-row input[type="file"]::file-selector-button:hover { background: #0f2a3b; }
+        
+        .my-pages-btn {
+            background: #2d4a5e; color: white; border: none;
+            padding: 6px 14px; border-radius: 40px; cursor: pointer;
+            font-size: 12px; font-family: inherit; transition: 0.2s;
+            display: inline-flex; align-items: center; gap: 4px; font-weight: 500;
+            text-decoration: none;
+        }
+        .my-pages-btn:hover { background: #1a3345; }
+        .link-display {
+            background: #f0f7fc; border: 1px solid #dbe4eb; border-radius: 60px;
+            padding: 6px 12px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .link-display .link-url {
+            flex: 1; color: #1a2a38; font-size: 12px; word-break: break-all;
+            background: none; border: none; font-family: inherit; padding: 2px 0;
+        }
+        .link-display .copy-btn {
+            background: #2d4a5e; color: white; border: none;
+            padding: 3px 10px; border-radius: 40px; cursor: pointer;
+            font-size: 11px; font-family: inherit; transition: 0.2s;
+        }
+        .link-display .copy-btn:hover { background: #1a3345; }
         
         @media (max-width: 480px) {
-            .card { padding: 1rem; border-radius: 1.8rem; }
-            .settings-btn { top: 0.8rem; right: 0.8rem; width: 36px; height: 36px; font-size: 1rem; }
-            .profile-info { padding: 1.2rem; }
-            .avatar { width: 110px; height: 110px; }
-            .social-links a { width: 36px; height: 36px; font-size: 1rem; }
-            .account-section { padding: 1.2rem; }
-            .cta-button { padding: 0.5rem 1.2rem; font-size: 0.8rem; }
-            .account-row { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+            .card { padding: 16px 14px; border-radius: 18px; }
+            .avatar { width: 90px; height: 90px; }
+            .name { font-size: 19px; }
+            .bio { font-size: 13px; }
+            .info-list li { font-size: 13px; padding: 4px 0; }
+            .social-links a { width: 34px; height: 34px; font-size: 14px; }
+            .account-row { flex-direction: column; align-items: stretch; gap: 6px; }
             .auth-status { justify-content: center; }
-            .auth-buttons { justify-content: center; }
-            .modal-box { padding: 1.5rem 1rem 1rem; max-height: 95vh; }
+            .btn { text-align: center; }
+            .modal-box { padding: 16px 14px; }
         }
         @media (hover: none) {
-            .cta-button:hover { transform: none; }
-            .social-links a:hover { transform: none; background: white; color: #1d3b4f; }
-            .settings-btn:hover { transform: none; background: rgba(255, 255, 255, 0.6); color: #1d3b4f; }
+            .btn:hover { transform: none; }
+            .social-links a:hover { transform: none; background: #f5f8fa; color: #2d4a5e; }
+            .settings-btn:hover { transform: none; background: #f0f4f8; color: #2d4a5e; }
         }
     </style>
 </head>
 <body>
     <div class="card" id="mainCard">
-        <button class="settings-btn" id="settingsBtn" aria-label="Cài đặt"><i class="fas fa-cog"></i></button>
+        <button class="settings-btn" id="settingsBtn"><i class="fas fa-cog"></i></button>
         
-        <div class="profile-content">
-            <!-- Profile Info - 1 cột duy nhất -->
-            <div class="profile-info">
-                <div class="avatar-wrapper">
-                    <img class="avatar" id="profileAvatar" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Avatar">
-                    <div class="avatar-edit-hint" id="avatarEditHint" title="Đổi ảnh đại diện"><i class="fas fa-camera"></i></div>
+        <div class="avatar-wrap">
+            <img class="avatar" id="profileAvatar" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Avatar">
+            <div class="avatar-edit" id="avatarEditHint"><i class="fas fa-camera"></i></div>
+        </div>
+        
+        <div class="name" id="profileName">Nguyễn Đức Anh</div>
+        <div class="tagline-wrap"><span class="tagline" id="profileTagline"><i class="fas fa-code" style="margin-right:4px;"></i>Developer</span></div>
+        
+        <div class="bio" id="shortBio">
+            <strong>Xin chào!</strong> Tôi là Nguyễn Đức Anh, một nhà phát triển web đam mê công nghệ và sáng tạo. Tôi thích xây dựng những sản phẩm trực quan, tối ưu trải nghiệm người dùng và luôn học hỏi những xu hướng mới.
+        </div>
+        
+        <ul class="info-list" id="infoList">
+            <li><i class="fas fa-map-pin"></i> <span id="infoLocation">Hà Nam, Việt Nam</span></li>
+            <li><i class="fas fa-briefcase"></i> <span id="infoExperience">5+ năm kinh nghiệm</span></li>
+            <li><i class="fas fa-envelope"></i> <span id="infoEmail">ducanhnen@gmail.com</span></li>
+            <li><i class="fas fa-phone-alt"></i> <span id="infoPhone">0325976017</span></li>
+        </ul>
+        
+        <div class="social-links" id="socialLinks">
+            <a href="#" class="zalo" data-platform="zalo" target="_blank" title="Zalo"><i class="fas fa-comment-dots"></i></a>
+            <a href="#" class="discord" data-platform="discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" class="youtube" data-platform="youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="telegram" data-platform="telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" class="facebook" data-platform="facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="tiktok" data-platform="tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <div class="account-section" id="accountSection">
+            <div class="section-title"><i class="fas fa-lock"></i> Tài khoản</div>
+            <div class="account-row">
+                <div class="auth-status" id="authStatus"></div>
+                <div>
+                    <button class="btn" id="loginOpenBtn"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    <button class="btn btn-register" id="registerOpenBtn"><i class="fas fa-user-plus"></i> Đăng ký</button>
                 </div>
-                <h2 id="profileName">Nguyễn Đức Anh</h2>
-                <div class="tagline" id="profileTagline"><i class="fas fa-code" style="margin-right: 6px;"></i> Developer</div>
-                <div class="short-bio" id="shortBio">
-                    <strong>Xin chào!</strong> Tôi là Nguyễn Đức Anh, một nhà phát triển web đam mê công nghệ và sáng tạo. Tôi thích xây dựng những sản phẩm trực quan, tối ưu trải nghiệm người dùng và luôn học hỏi những xu hướng mới.
-                </div>
-                <ul class="info-list" id="infoList">
-                    <li><i class="fas fa-map-pin"></i> <span id="infoLocation">Hà Nam, Việt Nam</span></li>
-                    <li><i class="fas fa-briefcase"></i> <span id="infoExperience">5+ năm kinh nghiệm</span></li>
-                    <li><i class="fas fa-envelope"></i> <span id="infoEmail">ducanhnen@gmail.com</span></li>
-                    <li><i class="fas fa-phone-alt"></i> <span id="infoPhone">0325976017</span></li>
-                </ul>
-                <div class="social-links" id="socialLinks">
-                    <a href="#" class="zalo" data-platform="zalo" target="_blank" title="Zalo"><i class="fas fa-comment-dots"></i></a>
-                    <a href="#" class="discord" data-platform="discord" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="youtube" data-platform="youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="telegram" data-platform="telegram" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#" class="facebook" data-platform="facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="tiktok" data-platform="tiktok" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            
-            <!-- Account Section - 1 cột -->
-            <div class="account-section" id="accountSection">
-                <div class="section-title"><i class="fas fa-lock"></i> Tài khoản</div>
-                <div class="account-row">
-                    <div class="auth-status" id="authStatus"></div>
-                    <div class="auth-buttons">
-                        <button class="cta-button" id="loginOpenBtn"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
-                        <button class="cta-button register-btn" id="registerOpenBtn"><i class="fas fa-user-plus"></i> Đăng ký</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-note">
-                <i class="fas fa-crown" style="opacity: 0.3; margin-right: 6px;"></i>
-                Designed with <i class="fas fa-heart" style="color: #b54a4a; opacity: 0.6;"></i> · © 2026 Nguyễn Đức Anh
             </div>
         </div>
+        
+        <div class="footer-note">
+            <i class="fas fa-crown" style="opacity:0.3;margin-right:4px;"></i>
+            Trang cá nhân của Nguyễn Đức Anh · © 2026
+        </div>
     </div>
-
-    <!-- Settings Modal -->
+    
+    <!-- SETTINGS MODAL -->
     <div class="modal-overlay" id="settingsModal">
         <div class="modal-box">
             <button class="modal-close" id="settingsModalClose">&times;</button>
-            <h3><i class="fas fa-cog" style="margin-right: 0.5rem; color: #2d6b8f;"></i> Cài đặt</h3>
-            <p class="sub">Thay đổi thông tin cá nhân và liên kết</p>
-            <div class="modal-scrollable">
+            <h3><i class="fas fa-cog" style="margin-right:6px;color:#2d6b8f;"></i> Cài đặt</h3>
+            <p class="sub">Thay đổi thông tin cá nhân</p>
+            <div class="modal-scroll">
                 <form id="settingsForm">
                     <div class="form-group">
                         <label>Ảnh đại diện</label>
                         <div class="avatar-upload-row">
-                            <img class="avatar-preview" id="settingsAvatarPreview" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Preview">
+                            <img class="preview" id="settingsAvatarPreview" src="https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5" alt="Preview">
                             <input type="file" id="avatarInput" accept="image/*">
                         </div>
                     </div>
@@ -543,12 +460,12 @@
                         <input type="text" id="settingsName" placeholder="Nguyễn Đức Anh">
                     </div>
                     <div class="form-group">
-                        <label for="settingsTagline">Chức danh / Tagline</label>
+                        <label for="settingsTagline">Chức danh</label>
                         <input type="text" id="settingsTagline" placeholder="Developer">
                     </div>
                     <div class="form-group">
-                        <label for="settingsBio">Giới thiệu bản thân</label>
-                        <textarea id="settingsBio" rows="2" placeholder="Viết giới thiệu về bạn..."></textarea>
+                        <label for="settingsBio">Giới thiệu</label>
+                        <textarea id="settingsBio" rows="2" placeholder="Giới thiệu về bạn..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="settingsLocation">Địa chỉ</label>
@@ -567,89 +484,87 @@
                         <input type="text" id="settingsPhone" placeholder="0325976017">
                     </div>
                     
-                    <div class="form-group" style="border-top: 1px solid #dbe4eb; padding-top: 1rem; margin-top: 0.5rem;">
-                        <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">Liên kết mạng xã hội</label>
-                        <p style="font-size: 0.75rem; color: #6a7e8d; margin-bottom: 0.6rem;">Nhập URL đầy đủ</p>
+                    <div class="form-group" style="border-top:1px solid #e8eef2;padding-top:12px;margin-top:4px;">
+                        <label style="font-weight:600;font-size:14px;color:#0a1a26;">Mạng xã hội</label>
                         <div class="form-group">
-                            <label><i class="fas fa-comment-dots" style="color: #0183d1;"></i> Zalo</label>
+                            <label><i class="fas fa-comment-dots" style="color:#0183d1;"></i> Zalo</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fas fa-comment-dots"></i></span>
+                                <span class="social-icon"><i class="fas fa-comment-dots"></i></span>
                                 <input type="url" id="socialZalo" placeholder="https://zalo.me/...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label><i class="fab fa-discord" style="color: #5865F2;"></i> Discord</label>
+                            <label><i class="fab fa-discord" style="color:#5865F2;"></i> Discord</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fab fa-discord"></i></span>
+                                <span class="social-icon"><i class="fab fa-discord"></i></span>
                                 <input type="url" id="socialDiscord" placeholder="https://discord.com/...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label><i class="fab fa-youtube" style="color: #FF0000;"></i> YouTube</label>
+                            <label><i class="fab fa-youtube" style="color:#FF0000;"></i> YouTube</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fab fa-youtube"></i></span>
+                                <span class="social-icon"><i class="fab fa-youtube"></i></span>
                                 <input type="url" id="socialYoutube" placeholder="https://youtube.com/...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label><i class="fab fa-telegram-plane" style="color: #0088cc;"></i> Telegram</label>
+                            <label><i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fab fa-telegram-plane"></i></span>
+                                <span class="social-icon"><i class="fab fa-telegram-plane"></i></span>
                                 <input type="url" id="socialTelegram" placeholder="https://t.me/...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label><i class="fab fa-facebook-f" style="color: #1877F2;"></i> Facebook</label>
+                            <label><i class="fab fa-facebook-f" style="color:#1877F2;"></i> Facebook</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fab fa-facebook-f"></i></span>
+                                <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
                                 <input type="url" id="socialFacebook" placeholder="https://facebook.com/...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label><i class="fab fa-tiktok" style="color: #000000;"></i> TikTok</label>
+                            <label><i class="fab fa-tiktok" style="color:#000000;"></i> TikTok</label>
                             <div class="social-input-row">
-                                <span class="social-icon-label"><i class="fab fa-tiktok"></i></span>
+                                <span class="social-icon"><i class="fab fa-tiktok"></i></span>
                                 <input type="url" id="socialTiktok" placeholder="https://tiktok.com/@...">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="form-group" style="border-top: 1px solid #dbe4eb; padding-top: 1rem; margin-top: 0.5rem;">
-                        <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">
-                            <i class="fas fa-globe" style="color: #2d6b8f;"></i> My Pages
+                    <div class="form-group" style="border-top:1px solid #e8eef2;padding-top:12px;margin-top:4px;">
+                        <label style="font-weight:600;font-size:14px;color:#0a1a26;">
+                            <i class="fas fa-globe" style="color:#2d6b8f;"></i> My Pages
                         </label>
-                        <p style="font-size: 0.75rem; color: #6a7e8d; margin-bottom: 0.6rem;">Xem trang cá nhân ở chế độ công khai</p>
-                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px;">
                             <a href="#" id="viewMyPageBtn" class="my-pages-btn" target="_blank">
                                 <i class="fas fa-eye"></i> Xem trang
                             </a>
-                            <button type="button" class="copy-btn" id="copyMyPageLink" style="background: #1d3b4f; color: white; border: none; padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; font-size: 0.8rem; font-family: inherit; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.4rem;">
+                            <button type="button" class="my-pages-btn" id="copyMyPageLink" style="background:#4a6a7e;">
                                 <i class="fas fa-copy"></i> Sao chép link
                             </button>
                         </div>
-                        <div class="profile-link-display">
-                            <span class="link-icon"><i class="fas fa-link"></i></span>
+                        <div class="link-display">
+                            <i class="fas fa-link" style="color:#2d6b8f;font-size:12px;"></i>
                             <input type="text" class="link-url" id="myPageLinkUrl" readonly value="">
                         </div>
                     </div>
-
+                    
                     <div class="form-actions">
-                        <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Lưu thay đổi</button>
+                        <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Lưu</button>
                         <button type="button" class="btn-secondary" id="settingsCancelBtn">Hủy</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- Auth Modal -->
+    
+    <!-- AUTH MODAL -->
     <div class="modal-overlay" id="authModal">
         <div class="modal-box">
             <button class="modal-close" id="modalCloseBtn">&times;</button>
             <h3 id="modalTitle">Đăng nhập</h3>
-            <p class="sub" id="modalSub">Vui lòng nhập thông tin của bạn</p>
-            <div class="modal-scrollable">
-                <form id="authForm" autocomplete="off">
+            <p class="sub" id="modalSub">Nhập thông tin của bạn</p>
+            <div class="modal-scroll">
+                <form id="authForm">
                     <div class="form-group" id="nameGroup">
                         <label for="fullName">Họ và tên</label>
                         <input type="text" id="fullName" placeholder="Nguyễn Văn A" required>
@@ -673,23 +588,22 @@
             </div>
         </div>
     </div>
-
+    
     <script>
         (function() {
-            // Kiểm tra chế độ xem
-            const urlParams = new URLSearchParams(window.location.search);
-            const isViewMode = urlParams.get('view') === 'true';
-            const mainCard = document.getElementById('mainCard');
-
-            if (isViewMode) {
-                mainCard.classList.add('view-mode');
-                document.querySelector('.footer-note').innerHTML = `
-                    <i class="fas fa-crown" style="opacity: 0.3; margin-right: 6px;"></i>
-                    Trang cá nhân của Nguyễn Đức Anh · © 2026
-                `;
+            // ===== KIỂM TRA NGƯỜI DÙNG ĐÃ ĐĂNG NHẬP CHƯA =====
+            function getSession() {
+                try { return JSON.parse(localStorage.getItem('mywebsite_session')) || null; } catch { return null; }
             }
-
-            // Dữ liệu mặc định
+            
+            const session = getSession();
+            const isLoggedIn = session && session.email;
+            
+            // Nếu KHÔNG đăng nhập -> chế độ xem (ẩn nút điều khiển)
+            if (!isLoggedIn) {
+                document.getElementById('mainCard').classList.add('view-mode');
+            }
+            
             const defaultProfile = {
                 avatar: 'https://ui-avatars.com/api/?name=Nguyen+Đuc+Anh&size=150&background=2d6b8f&color=fff&bold=true&font-size=0.5',
                 name: 'Nguyễn Đức Anh',
@@ -700,7 +614,7 @@
                 email: 'ducanhnen@gmail.com',
                 phone: '0325976017'
             };
-
+            
             const profileAvatar = document.getElementById('profileAvatar');
             const profileName = document.getElementById('profileName');
             const profileTagline = document.getElementById('profileTagline');
@@ -710,28 +624,27 @@
             const infoEmail = document.getElementById('infoEmail');
             const infoPhone = document.getElementById('infoPhone');
             const socialLinks = document.getElementById('socialLinks');
-
+            
             function getProfile() {
                 try { return JSON.parse(localStorage.getItem('mywebsite_profile')) || null; } catch { return null; }
             }
-
             function getSocialLinks() {
                 try { return JSON.parse(localStorage.getItem('mywebsite_social')) || {}; } catch { return {}; }
             }
-
+            
             function loadProfileData() {
                 const profile = getProfile();
                 const data = profile || defaultProfile;
                 if (data.avatar) profileAvatar.src = data.avatar;
                 if (data.name) profileName.textContent = data.name;
-                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.tagline) profileTagline.innerHTML = '<i class="fas fa-code" style="margin-right:4px;"></i> ' + data.tagline;
                 if (data.bio) shortBio.innerHTML = data.bio;
                 if (data.location) infoLocation.textContent = data.location;
                 if (data.experience) infoExperience.textContent = data.experience;
                 if (data.email) infoEmail.textContent = data.email;
                 if (data.phone) infoPhone.textContent = data.phone;
             }
-
+            
             function loadSocialData() {
                 const links = getSocialLinks();
                 const anchors = socialLinks.querySelectorAll('a');
@@ -740,21 +653,21 @@
                     if (links[platform]) { a.href = links[platform]; } else { a.href = '#'; }
                 });
             }
-
-            // Nếu là chế độ xem, chỉ load dữ liệu và thoát
-            if (isViewMode) {
+            
+            // Nếu chưa đăng nhập -> load dữ liệu và thoát (không cần JS quản trị)
+            if (!isLoggedIn) {
                 loadProfileData();
                 loadSocialData();
                 return;
             }
-
-            // === CHẾ ĐỘ CHỦ SỞ HỮU ===
+            
+            // ===== CHẾ ĐỘ CHỦ SỞ HỮU (ĐÃ ĐĂNG NHẬP) =====
             let currentMode = 'login';
             const USERS_KEY = 'mywebsite_users';
             const SESSION_KEY = 'mywebsite_session';
             const PROFILE_KEY = 'mywebsite_profile';
             const SOCIAL_KEY = 'mywebsite_social';
-
+            
             const settingsModal = document.getElementById('settingsModal');
             const settingsModalClose = document.getElementById('settingsModalClose');
             const settingsBtn = document.getElementById('settingsBtn');
@@ -770,18 +683,18 @@
             const avatarInput = document.getElementById('avatarInput');
             const settingsCancelBtn = document.getElementById('settingsCancelBtn');
             const avatarEditHint = document.getElementById('avatarEditHint');
-
+            
             const viewMyPageBtn = document.getElementById('viewMyPageBtn');
             const copyMyPageLink = document.getElementById('copyMyPageLink');
             const myPageLinkUrl = document.getElementById('myPageLinkUrl');
-
+            
             const socialZalo = document.getElementById('socialZalo');
             const socialDiscord = document.getElementById('socialDiscord');
             const socialYoutube = document.getElementById('socialYoutube');
             const socialTelegram = document.getElementById('socialTelegram');
             const socialFacebook = document.getElementById('socialFacebook');
             const socialTiktok = document.getElementById('socialTiktok');
-
+            
             const modal = document.getElementById('authModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalSub = document.getElementById('modalSub');
@@ -798,18 +711,18 @@
             const registerOpenBtn = document.getElementById('registerOpenBtn');
             const modalCloseBtn = document.getElementById('modalCloseBtn');
             const authStatus = document.getElementById('authStatus');
-
+            
             function getShareLink() {
                 const baseUrl = window.location.href.split('?')[0];
-                return baseUrl + '?view=true';
+                return baseUrl; // KHÔNG CÓ ?view=true
             }
-
+            
             function updateMyPageLink() {
                 const url = getShareLink();
                 myPageLinkUrl.value = url;
                 viewMyPageBtn.href = url;
             }
-
+            
             copyMyPageLink.addEventListener('click', function() {
                 const link = myPageLinkUrl.value;
                 if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -820,7 +733,7 @@
                     }).catch(function() { fallbackCopy(link); });
                 } else { fallbackCopy(link); }
             });
-
+            
             function fallbackCopy(text) {
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
@@ -836,9 +749,9 @@
                 } catch (err) { alert('Không thể sao chép. Vui lòng sao chép thủ công.'); }
                 document.body.removeChild(textarea);
             }
-
+            
             function saveSocialLinks(data) { localStorage.setItem(SOCIAL_KEY, JSON.stringify(data)); }
-
+            
             function loadSocialLinks() {
                 const links = getSocialLinks();
                 const anchors = socialLinks.querySelectorAll('a');
@@ -853,7 +766,7 @@
                 socialFacebook.value = links.facebook || '';
                 socialTiktok.value = links.tiktok || '';
             }
-
+            
             function applySocialLinks(links) {
                 const anchors = socialLinks.querySelectorAll('a');
                 anchors.forEach(a => {
@@ -861,15 +774,15 @@
                     if (links[platform]) { a.href = links[platform]; } else { a.href = '#'; }
                 });
             }
-
+            
             function saveProfile(data) { localStorage.setItem(PROFILE_KEY, JSON.stringify(data)); }
-
+            
             function loadProfile() {
                 const profile = getProfile();
                 const data = profile || defaultProfile;
                 if (data.avatar) profileAvatar.src = data.avatar;
                 if (data.name) profileName.textContent = data.name;
-                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.tagline) profileTagline.innerHTML = '<i class="fas fa-code" style="margin-right:4px;"></i> ' + data.tagline;
                 if (data.bio) shortBio.innerHTML = data.bio;
                 if (data.location) infoLocation.textContent = data.location;
                 if (data.experience) infoExperience.textContent = data.experience;
@@ -885,11 +798,11 @@
                 settingsAvatarPreview.src = data.avatar || profileAvatar.src;
                 updateMyPageLink();
             }
-
+            
             function applySettings(data) {
                 if (data.avatar) { profileAvatar.src = data.avatar; settingsAvatarPreview.src = data.avatar; }
                 if (data.name) profileName.textContent = data.name;
-                if (data.tagline) profileTagline.innerHTML = `<i class="fas fa-code" style="margin-right: 6px;"></i> ${data.tagline}`;
+                if (data.tagline) profileTagline.innerHTML = '<i class="fas fa-code" style="margin-right:4px;"></i> ' + data.tagline;
                 if (data.bio) shortBio.innerHTML = data.bio;
                 if (data.location) infoLocation.textContent = data.location;
                 if (data.experience) infoExperience.textContent = data.experience;
@@ -897,7 +810,7 @@
                 if (data.phone) infoPhone.textContent = data.phone;
                 updateMyPageLink();
             }
-
+            
             function openSettingsModal() {
                 settingsModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -919,12 +832,12 @@
                 socialTiktok.value = links.tiktok || '';
                 updateMyPageLink();
             }
-
+            
             function closeSettingsModal() {
                 settingsModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
-
+            
             avatarInput.addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (file) {
@@ -933,7 +846,7 @@
                     reader.readAsDataURL(file);
                 }
             });
-
+            
             settingsForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const profile = {
@@ -962,7 +875,7 @@
                 closeSettingsModal();
                 renderAuthStatus();
             });
-
+            
             settingsCancelBtn.addEventListener('click', closeSettingsModal);
             settingsModalClose.addEventListener('click', closeSettingsModal);
             settingsBtn.addEventListener('click', openSettingsModal);
@@ -971,7 +884,7 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && settingsModal.classList.contains('active')) { closeSettingsModal(); }
             });
-
+            
             function getUsers() { try { return JSON.parse(localStorage.getItem(USERS_KEY)) || []; } catch { return []; } }
             function saveUsers(users) { localStorage.setItem(USERS_KEY, JSON.stringify(users)); }
             function getSession() { try { return JSON.parse(localStorage.getItem(SESSION_KEY)) || null; } catch { return null; } }
@@ -979,7 +892,7 @@
                 if (email) { localStorage.setItem(SESSION_KEY, JSON.stringify({ email, loggedInAt: Date.now() })); } 
                 else { localStorage.removeItem(SESSION_KEY); }
             }
-
+            
             function renderAuthStatus() {
                 const session = getSession();
                 if (session && session.email) {
@@ -987,22 +900,23 @@
                     const user = users.find(u => u.email === session.email);
                     const displayName = user ? user.fullName : session.email;
                     authStatus.innerHTML = `
-                        <span class="user-info"><i class="fas fa-check-circle" style="color: #2a7a5c;"></i> Xin chào, <strong>${displayName}</strong></span>
-                        <button class="cta-button logout-btn" id="logoutBtn" style="padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+                        <span class="user-info"><i class="fas fa-check-circle" style="color:#2a7a5c;"></i> Xin chào, <strong>${displayName}</strong></span>
+                        <button class="btn btn-logout" id="logoutBtn" style="padding:4px 14px;font-size:12px;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
                     `;
                     const logoutBtn = document.getElementById('logoutBtn');
                     if (logoutBtn) {
                         logoutBtn.addEventListener('click', function(e) {
                             e.preventDefault();
                             saveSession(null);
-                            renderAuthStatus();
+                            // Reload để chuyển sang view mode
+                            window.location.reload();
                         });
                     }
                 } else {
-                    authStatus.innerHTML = `<span class="user-info" style="background: rgba(0,0,0,0.03);"><i class="fas fa-user"></i> Chưa đăng nhập</span>`;
+                    authStatus.innerHTML = `<span class="user-info" style="background:rgba(0,0,0,0.03);"><i class="fas fa-user"></i> Chưa đăng nhập</span>`;
                 }
             }
-
+            
             function openModal(mode = 'login') {
                 currentMode = mode;
                 modal.classList.add('active');
@@ -1033,12 +947,12 @@
                 authForm.reset();
                 setTimeout(() => emailInput.focus(), 200);
             }
-
+            
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
             }
-
+            
             function handleSubmit(e) {
                 e.preventDefault();
                 const email = emailInput.value.trim();
@@ -1071,11 +985,11 @@
                     }
                     saveSession(email);
                     closeModal();
-                    renderAuthStatus();
-                    alert('Đăng nhập thành công!');
+                    // Reload để chuyển sang chế độ chủ sở hữu
+                    window.location.reload();
                 }
             }
-
+            
             loginOpenBtn.addEventListener('click', function(e) { e.preventDefault(); openModal('login'); });
             registerOpenBtn.addEventListener('click', function(e) { e.preventDefault(); openModal('register'); });
             modalCloseBtn.addEventListener('click', closeModal);
@@ -1088,8 +1002,7 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
             });
-
-            // Khởi tạo
+            
             loadProfile();
             loadSocialLinks();
             renderAuthStatus();

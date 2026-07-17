@@ -12,7 +12,7 @@
     <meta property="og:image:height" content="500" />
     <meta property="og:url" content="https://dsft55-ui.github.io" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Nguyễn Đức Anh" />
+    meta property="og:site_name" content="Nguyễn Đức Anh" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nguyễn Đức Anh | Developer" />
@@ -335,7 +335,6 @@
         }
         .form-group .social-input-row input { flex: 1; padding: 0.6rem 0.9rem; font-size: 0.85rem; }
         
-        /* My Pages Button */
         .my-pages-btn {
             background: #1d3b4f;
             color: white;
@@ -473,8 +472,12 @@
             font-size: 0.9rem;
         }
         .auth-status .user-info i { margin-right: 0.4rem; color: #2d6b8f; }
-        .view-mode .settings-btn, .view-mode .avatar-edit-hint, .view-mode .main-content { display: none !important; }
+        
+        .view-mode .settings-btn, 
+        .view-mode .avatar-edit-hint, 
+        .view-mode .main-content { display: none !important; }
         .view-mode .card { padding-top: 1.5rem; }
+        
         @media (max-width: 850px) {
             .profile-grid { grid-template-columns: 1fr; gap: 1.8rem; }
             .card { padding: 1.8rem; }
@@ -641,7 +644,6 @@
                         </div>
                     </div>
                     
-                    <!-- My Pages Section -->
                     <div class="form-group" style="border-top: 1px solid #dbe4eb; padding-top: 1rem; margin-top: 0.5rem;">
                         <label style="font-weight: 600; font-size: 1rem; color: #0b1a26;">
                             <i class="fas fa-globe" style="color: #2d6b8f;"></i> My Pages
@@ -792,7 +794,6 @@
             const settingsCancelBtn = document.getElementById('settingsCancelBtn');
             const avatarEditHint = document.getElementById('avatarEditHint');
 
-            // My Pages elements
             const viewMyPageBtn = document.getElementById('viewMyPageBtn');
             const copyMyPageLink = document.getElementById('copyMyPageLink');
             const myPageLinkUrl = document.getElementById('myPageLinkUrl');
